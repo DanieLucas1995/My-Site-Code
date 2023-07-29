@@ -126,7 +126,6 @@ h5 {
   font-family: Roboto, Arial;
   font-weight: 400;
   font-size: 38px;
-  z-index: 99999;
   margin-bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
