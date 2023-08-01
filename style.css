@@ -1470,11 +1470,33 @@ ul {
 }
 
 @media (min-width: 1281px) {
-  .preencher {
-    position: relative;
-    width: 0cm;
-    height: 129px;
-    background-color: #1F1F27;
+.preencher {
+  position: relative;
+  width: 18cm;
+  height: 129px;
+  background-color: #1F1F27;
+}
+.preencher::before, .preencher::after {
+  content: "";
+  position: absolute;
+  background-color: #3D444E;
+  left: 59px;
+  top: -520px;
+  bottom: 138px;
+  width: 2px;
+  border-radius: 0px;
+  z-index: 1000;
+}
+
+.preencher::after {
+  position: absolute;
+  background-color: #3D444E;
+  left: 4%;
+  top: -11px;
+  bottom: 0px;
+  width: 8px;
+  border-radius: 0px;
+  z-index: 1000;
 }
 
   .container3 {
@@ -1556,21 +1578,6 @@ overflow: hidden;
 opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
 }
 
-.preencher::before,
-.preencher::after {
-    content: "";
-    position: absolute;
-    background-color: #3D444E;
-}
-
-/* Linha vertical */
-.preencher::after {
-  left: 50%;
-  top: -520px;
-  bottom: 0px;
-  width: 8px;
-  border-radius: 0px;
-}
 
 /* Defina a imagem inicialmente invisível */
 .triangle {
