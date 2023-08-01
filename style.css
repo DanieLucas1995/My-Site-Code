@@ -121,32 +121,8 @@ h5 {
 }
 
 .titulo {
-  color: white;
-  position: absolute;
-  font-family: Roboto, Arial;
-  font-weight: 400;
-  font-size: 38px;
-  margin-bottom: 130px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
+display: none;
 }
-
-  /* Estilo para a primeira div com class="proj" */
-  .proj:nth-child(1) {
-    margin-top: 30px;
-  }
-
-  /* Estilo para a segunda div com class="proj" */
-  .proj:nth-child(2) {
-    margin-top: 90px;
-  }
-
-  /* Estilo para a terceira div com class="proj" */
-  .proj:nth-child(3) {
-    margin-top: 120px;
-  }
-
 
 .gold2 {
   margin-top: 654px;
@@ -197,6 +173,25 @@ h5 {
   z-index: 9999;
 }}
 
+/* Estilos específicos para Safari em dispositivos móveis */
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 767px) {
+  .titulo {
+    margin-bottom: 1500px;
+    margin-top: 0px;
+  }
+}
+
+/* Estilos específicos para Firefox em dispositivos móveis */
+@supports (-moz-appearance: none) {
+  @media (max-width: 767px) {
+    .titulo {
+      margin-bottom: 1500px;
+      margin-top: 0px;
+    }
+  }
+}
+
+
 @media (min-width: 0px) and (max-width: 399px) {
   .linhaverde {
     width: 7cm;
@@ -209,7 +204,7 @@ h5 {
     bottom: 183px;
     transform: rotate(0deg);
     transition: transform 0.5s ease;
-    top: 590px;
+    top: 580px;
   }}
 
 /* Language */
@@ -1217,7 +1212,22 @@ ul {
   margin-top: 654px;
   z-index: 99999;
   position: absolute;
-}}
+}
+  /* Estilo para a segunda div com class="proj" */
+  .proj:nth-child(2) {
+    margin-top: 90px;
+  }
+
+   /* Estilo para a terceira div com class="proj" */
+.proj:nth-child(3) {
+  margin-top: 120px;
+}
+
+.proj {
+  padding-top: 100px;
+}
+
+}
 
 
 @media (min-width: 400px) and (max-width: 1280px) {
@@ -1233,7 +1243,10 @@ ul {
   top: 536px;
   transform: rotate(0deg);
   transition: transform 0.5s ease;
-}}
+}
+}
+
+
 
 @media (min-width: 0px) and (max-width: 1280px) {
   .div2, .selfie {
@@ -1242,17 +1255,6 @@ ul {
     align-items: center;
     justify-content: center;
   }
-
-    /* Estilo para a segunda div com class="proj" */
-    .proj:nth-child(2) {
-      margin-top: 90px;
-    }
-
-     /* Estilo para a terceira div com class="proj" */
-  .proj:nth-child(3) {
-    margin-top: 120px;
-  }
-  
 
   .selfie img {
     max-width: 100%;
@@ -1360,9 +1362,7 @@ ul {
     color: #4CCC75;
   }
 
-  .proj {
-    padding-top: 100px;
-  }
+
 
   h2 {
     padding: 15px;
