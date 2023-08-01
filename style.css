@@ -1026,19 +1026,7 @@ ul {
       opacity: 1; /* Definindo a opacidade final como 1 (totalmente visível) */
       transform: translateX(22%) scale(1); /* Mantendo a posição final e a escala normal */
     }
-  }}
-
-@media (min-width: 500px) and (max-width: 1100px) {
-  .palestra {
-    overflow: hidden;
-    height: 112vh;
-    transform: translateX(7%);
-    opacity: 0; /* Definindo a opacidade inicial como 0 (invisível) */
-    animation: fadeIn 3s ease-in-out; /* Substituímos a animação slideInLeft por fadeIn */
-    margin-top: 9vh;
-    text-align: center;
-  }}
-
+  }
 /* Estilos para a classe .logos img */
 .logos img {
   opacity: 0;
@@ -1067,6 +1055,20 @@ ul {
     opacity: 1; /* Termina com opacidade 1 (totalmente visível) */
   }
 }
+}
+
+@media (min-width: 500px) and (max-width: 1100px) {
+  .palestra {
+    overflow: hidden;
+    height: 112vh;
+    transform: translateX(7%);
+    opacity: 0; /* Definindo a opacidade inicial como 0 (invisível) */
+    animation: fadeIn 3s ease-in-out; /* Substituímos a animação slideInLeft por fadeIn */
+    margin-top: 9vh;
+    text-align: center;
+  }}
+
+
 
 
 .flag-icon {
