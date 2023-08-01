@@ -1403,7 +1403,7 @@ ul {
   }
 
   .proj p {
-    font-family: Arial, Times New Roman, Times, serif;
+    font-family: Arial, Times, serif;
     margin-bottom: 10px; /* Adiciona um espaçamento inferior */
     color: white; /* Define a cor do texto como branco */
   }
@@ -1825,14 +1825,14 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
   }
 
   .proj h2 {
-    font-family: ROBOTO, Times New Roman, Times, serif;
+    font-family: ROBOTO, Arial, Times, serif;
     font-weight: bold; /* Define o texto em negrito */
     margin-bottom: 10px; /* Adiciona um espaçamento inferior */
     color: white; /* Define a cor do texto como branco */
   }
   
   .proj p {
-    font-family: ROBOTO, Times New Roman, Times, serif;
+    font-family: ROBOTO, Arial, Times, serif;
     margin-bottom: 10px; /* Adiciona um espaçamento inferior */
     color: white; /* Define a cor do texto como branco */
   }
