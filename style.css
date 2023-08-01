@@ -1395,7 +1395,7 @@ ul {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     position: relative; /* Adiciona a propriedade position */
-    bottom: 0cm; /* Faz a div subir 3 centímetros */
+    bottom: 50px; /* Faz a div subir 3 centímetros */
     z-index: 9999; /* Define uma camada superior para que a div fique por cima de outras imagens */
     padding-bottom: 50px; /* Add some padding at the bottom to create space for .formulario */
   }
