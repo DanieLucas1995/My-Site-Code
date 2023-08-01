@@ -34,6 +34,7 @@ dt.google-bert {
   margin-right: 25px;
 }
 
+
 h3 {
   font-size: 36px;
   font-family: Roboto, Arial;
@@ -1038,29 +1039,7 @@ ul {
     text-align: center;
   }}
 
-.logos img {
-  opacity: 0;
-  transition: opacity 0.9s ease-in;
-}
 
-.logos img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.fade-in {
-  animation: fade-in 1s;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }}
 
 .flag-icon {
   font-size: 20px;
