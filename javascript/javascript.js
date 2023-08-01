@@ -631,4 +631,15 @@ observer.observe(triangleElement);
 
 
 
+  // Detectar se o navegador é Safari ou Firefox
+  const isSafariOrFirefox =
+    /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
+    /firefox/i.test(navigator.userAgent);
 
+  // Adicionar a classe especial se o navegador for Safari ou Firefox
+  if (isSafariOrFirefox) {
+    const projElements = document.querySelectorAll(".proj");
+    projElements.forEach((element) => {
+      element.classList.add("safari-firefox-only");
+    });
+  }
