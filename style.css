@@ -1039,6 +1039,34 @@ ul {
     text-align: center;
   }}
 
+/* Estilos para a classe .logos img */
+.logos img {
+  opacity: 0;
+  transition: opacity 0.9s ease-in;
+}
+
+/* Estilos para a classe .logos img quando o mouse está sobre a imagem */
+.logos img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para a classe .fade-in que usa animação para tornar elementos visíveis */
+.fade-in {
+  animation: fade-in 1s; /* Nome da animação e duração */
+  animation-fill-mode: forwards; /* A animação manterá o estado final após a conclusão */
+  opacity: 0; /* Elemento começa invisível (opacidade 0) */
+}
+
+/* Definição da animação fade-in */
+@keyframes fade-in {
+  from {
+    opacity: 0; /* Começa com opacidade 0 */
+  }
+  to {
+    opacity: 1; /* Termina com opacidade 1 (totalmente visível) */
+  }
+}
 
 
 .flag-icon {
