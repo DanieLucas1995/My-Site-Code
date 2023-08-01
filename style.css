@@ -1243,6 +1243,32 @@ ul {
 }
 }
 
+
+/* Styles only for Safari */
+@media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  .formulario {
+    /* Safari-specific styles here */
+    margin-bottom: 30px;
+  }
+  .contato {
+    /* Safari-specific styles here */
+    margin-bottom: 680px;
+  }
+}}
+
+/* Styles only for Firefox */
+@-moz-document url-prefix() {
+  .formulario {
+    /* Firefox-specific styles here */
+    margin-bottom: 30px;
+  }
+  .contato {
+    /* Firefox-specific styles here */
+    margin-bottom: 680px;
+  }
+}
+ 
+
 @media (min-width: 500px) and (max-width: 1280px){
 .proj {
   padding-top: 100px;
@@ -1260,6 +1286,7 @@ ul {
 .safari-firefox-only {
   margin-top: 0px;
 }}
+
 
 
 @media (min-width: 400px) and (max-width: 1280px) {
@@ -1311,7 +1338,7 @@ ul {
   font-size: 1.5em;
   font-weight: bolder;
   bottom: -39px;
-  margin-bottom: 630px;
+  margin-bottom: 680px;
   margin-top: 0px;
   z-index: 1;
   padding: 10px;
