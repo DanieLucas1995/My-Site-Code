@@ -156,12 +156,12 @@ const bars = document.querySelectorAll('.barra-item');
 function animateBars() {
   gsap.to(bars, {
     scaleY: 1,
-    duration: 6,
+    duration: 15,
     ease: "elastic.out(1, 2)",
     onComplete: function () {
       gsap.to(bars, {
         scaleY: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power1.inOut",
         onComplete: animateBars // Chama a função novamente após a animação ser concluída
       });
@@ -312,7 +312,7 @@ function scrollToSection(target) {
 }
 
 
-// Bloco 20 a 25
+// Bloco 20 a 23
 function changeLanguage(language, selectedOption) {
   var languageOptions = document.querySelectorAll('.language-options li a');
 
@@ -369,6 +369,44 @@ function toggleLanguageOptions() {
   var languageOptionsContainer = document.querySelector('.language-options');
   languageOptionsContainer.style.display = languageOptionsContainer.style.display === 'block' ? 'none' : 'block';
 }
+
+// Bloco 24
+
+$(document).ready(function() {
+  var $carousel = $('#carousel');
+  var $projs = $carousel.find('.proj');
+  var currentIndex = 0;
+  
+  function showNextProject() {
+    $projs.eq(currentIndex).fadeOut(function() {
+      currentIndex = (currentIndex + 1) % $projs.length;
+      $projs.eq(currentIndex).fadeIn();
+    });
+  }
+
+  function showPrevProject() {
+    $projs.eq(currentIndex).fadeOut(function() {
+      currentIndex = (currentIndex - 1 + $projs.length) % $projs.length;
+      $projs.eq(currentIndex).fadeIn();
+    });
+  }
+
+  function setupClickHandler() {
+    $('.next-arrow').off('click').on('click', function() {
+      showNextProject();
+    });
+
+    $('.prev-arrow').off('click').on('click', function() {
+      showPrevProject();
+    });
+  }
+
+  $projs.hide(); // Esconder todos os projetos inicialmente
+  $projs.eq(currentIndex).fadeIn(); // Mostrar o primeiro projeto
+
+  setupClickHandler();
+});
+
 
 
 // Bloco 25
@@ -510,45 +548,7 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
-  var $carousel = $('#carousel');
-  var $projs = $carousel.find('.proj');
-  var currentIndex = 0;
-  
-  // Esconder todos os projetos, exceto o primeiro
-  $projs.not(':first').hide();
 
-  // Função para mostrar o próximo projeto
-  function showNextProject() {
-    $projs.eq(currentIndex).hide();
-    currentIndex = (currentIndex + 1) % $projs.length;
-    $projs.eq(currentIndex).fadeIn();
-  }
-
-  // Função para mostrar o projeto anterior
-  function showPrevProject() {
-    $projs.eq(currentIndex).hide();
-    currentIndex = (currentIndex - 1 + $projs.length) % $projs.length;
-    $projs.eq(currentIndex).fadeIn();
-  }
-
-  // Função para configurar os cliques nas setas
-  function setupClickHandler() {
-    $('.next-arrow').off('click').on('click', function() {
-      showNextProject();
-    });
-
-    $('.prev-arrow').off('click').on('click', function() {
-      showPrevProject();
-    });
-  }
-
-  // Mostrar o primeiro projeto
-  $projs.eq(currentIndex).show();
-
-  // Configurar os cliques para avançar e voltar
-  setupClickHandler();
-});
 
 // Bloco 30
 
@@ -614,33 +614,3 @@ function handleIntersection(entries, observer) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const carousel = document.getElementById("carousel");
-  const projects = document.getElementsByClassName("proj");
-  const nextArrow = document.querySelector(".next-arrow");
-  const prevArrow = document.querySelector(".prev-arrow");
-  let currentProject = 0;
-
-  function showProject(index) {
-    for (let i = 0; i < projects.length; i++) {
-      projects[i].style.display = "none";
-    }
-    projects[index].style.display = "block";
-  }
-
-  function nextProject() {
-    currentProject = (currentProject + 1) % projects.length;
-    showProject(currentProject);
-  }
-
-  function prevProject() {
-    currentProject = (currentProject - 1 + projects.length) % projects.length;
-    showProject(currentProject);
-  }
-
-  nextArrow.addEventListener("click", nextProject);
-  prevArrow.addEventListener("click", prevProject);
-
-  // Show the first project initially
-  showProject(currentProject);
-});
