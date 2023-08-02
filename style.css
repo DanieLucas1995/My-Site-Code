@@ -1,5 +1,6 @@
 @media (max-width: 499px) {
   body {
+    width: calc(100% + -11px);
     height: auto;
     overflow-x: hidden;
   }
@@ -194,9 +195,9 @@ display: none;
 .div2 .barra-jogos {
   position: absolute;
   top: 2110px;
-  right: -1px;
+  right: 0px;
   height: 118%;
-  width: 9px;
+  width: 3px;
   z-index: 9999;
 }}
 
