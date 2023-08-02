@@ -614,32 +614,33 @@ function handleIntersection(entries, observer) {
   });
 }
 
-// Criação do Intersection Observer
-const options = {
-  root: null, // Usando a viewport como o elemento raiz
-  rootMargin: '0px',
-  threshold: 0.5 // A animação será disparada quando pelo menos 50% do elemento estiver visível
-};
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.getElementById("carousel");
+  const projects = document.getElementsByClassName("proj");
+  const nextArrow = document.querySelector(".next-arrow");
+  const prevArrow = document.querySelector(".prev-arrow");
+  let currentProject = 0;
 
-const observer = new IntersectionObserver(handleIntersection, options);
-
-// Obtem o elemento que queremos observar
-const triangleElement = document.querySelector('.triangle');
-
-// Iniciamos a observação do elemento
-observer.observe(triangleElement);
-
-
-
-  // Detectar se o navegador é Safari ou Firefox
-  const isSafariOrFirefox =
-    /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
-    /firefox/i.test(navigator.userAgent);
-
-  // Adicionar a classe especial se o navegador for Safari ou Firefox
-  if (isSafariOrFirefox) {
-    const projElements = document.querySelectorAll(".proj");
-    projElements.forEach((element) => {
-      element.classList.add("safari-firefox-only");
-    });
+  function showProject(index) {
+    for (let i = 0; i < projects.length; i++) {
+      projects[i].style.display = "none";
+    }
+    projects[index].style.display = "block";
   }
+
+  function nextProject() {
+    currentProject = (currentProject + 1) % projects.length;
+    showProject(currentProject);
+  }
+
+  function prevProject() {
+    currentProject = (currentProject - 1 + projects.length) % projects.length;
+    showProject(currentProject);
+  }
+
+  nextArrow.addEventListener("click", nextProject);
+  prevArrow.addEventListener("click", prevProject);
+
+  // Show the first project initially
+  showProject(currentProject);
+});
