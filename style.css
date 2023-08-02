@@ -34,6 +34,18 @@ dt.google-bert {
   margin-right: 25px;
 }
 
+.div3::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-image: url(preto-com-linhas-azuis-imagens-imagem-de-fundo-wallpaper-para-pc-computador-tela-gratis-ambiente-de-trabalho.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
 
 h3 {
   font-size: 36px;
@@ -172,7 +184,23 @@ display: none;
   height: 118%;
   width: 9px;
   z-index: 9999;
-}}
+}
+
+#btnScrollToTop {
+  display: none;
+  position: fixed;
+  bottom: 115px;
+  right: 115mm;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+}
 
 /* Estilos específicos para Safari em dispositivos móveis */
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 767px) {
@@ -1068,9 +1096,6 @@ ul {
     text-align: center;
   }}
 
-
-
-
 .flag-icon {
   font-size: 20px;
   margin-right: 5px;
@@ -1128,6 +1153,22 @@ ul {
   position: relative;
   z-index: 999;
 }
+
+@media (min-width: 500px) {
+#btnScrollToTop {
+  display: none;
+  position: fixed;
+  bottom: 115px;
+  right: 320mm;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}}
 
 @media (min-width: 500px) and (max-width: 1280px) {
 .eu {
@@ -1208,7 +1249,6 @@ ul {
   text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
 }
 
-
 .formulario label {
   display: block;
   width: 100%;
@@ -1243,7 +1283,6 @@ ul {
 }
 }
 
-
 /* Styles only for Safari */
 @media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
   .formulario {
@@ -1267,7 +1306,6 @@ ul {
     margin-bottom: 680px;
   }
 }
- 
 
 @media (min-width: 500px) and (max-width: 1280px){
 .proj {
@@ -1287,8 +1325,6 @@ ul {
   margin-top: 0px;
 }}
 
-
-
 @media (min-width: 400px) and (max-width: 1280px) {
 .linhaverde {
   width: 7cm;
@@ -1305,8 +1341,6 @@ ul {
 }
 }
 
-
-
 @media (min-width: 0px) and (max-width: 1280px) {
   .div2, .selfie {
     display: flex;
@@ -1320,7 +1354,6 @@ ul {
     height: auto;
     max-width: 300px;
   }
-
 
   .triangle {
     display: none;
@@ -1421,8 +1454,6 @@ ul {
     color: #4CCC75;
   }
 
-
-
   h2 {
     padding: 15px;
     align-self: center;
@@ -1487,7 +1518,6 @@ ul {
   margin-top: 0px;
 }
 
-
 .add img {
     max-width: 100%;
     height: auto;
@@ -1503,6 +1533,7 @@ ul {
   height: 129px;
   background-color: #1F1F27;
 }
+
 .preencher::before, .preencher::after {
   content: "";
   position: absolute;
@@ -1604,7 +1635,6 @@ position: relative;
 overflow: hidden;
 opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
 }
-
 
 /* Defina a imagem inicialmente invisível */
 .triangle {
@@ -2006,7 +2036,6 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     right: -4%;
   }
 
-
 .flag-icon {
   width: 20px;
   height: 20px;
@@ -2077,20 +2106,21 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     margin-right: 0px;
     position: relative;
     z-index: 0;
+    bottom: 0px;
 }
 
 .div3::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 124%;
-      background-image: url("preto-com-linhas-azuis-imagens-imagem-de-fundo-wallpaper-para-pc-computador-tela-gratis-ambiente-de-trabalho.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: -1;
-    }
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-image: url(preto-com-linhas-azuis-imagens-imagem-de-fundo-wallpaper-para-pc-computador-tela-gratis-ambiente-de-trabalho.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
 
 @media screen and (min-width: 500px) and (max-width: 700px) {
   .add {
@@ -2108,19 +2138,6 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     margin-top: -54px; /* Ajuste o valor de acordo com a quantidade desejada de espaço */
     box-sizing: border-box; /* Adicionado para incluir margens e bordas na largura */
     margin-right: -16px; /* Compensação para evitar o estouro do conteúdo */
-  }
-
-  .div3::before {
-    content: "";
-    position: absolute;
-    top: 55px;
-    left: -100%; /* Alterado para -100% para cobrir toda a largura */
-    width: 200%; /* Aumentado para cobrir toda a largura */
-    height: 83%;
-    background-image: url("preto-com-linhas-azuis-imagens-imagem-de-fundo-wallpaper-para-pc-computador-tela-gratis-ambiente-de-trabalho.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.1;
   }}
 
    #myImage {
@@ -2193,34 +2210,10 @@ h6 {
   color: white;
 }
 
-#btnScrollToTop {
-  display: none;
-  position: fixed;
-  bottom: 60px;
-  right: 11px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  background-color: #000;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-}
-
 #btnScrollToTop:hover {
   background-color: #555;
 }
 
-@media (max-width: 499px) {
-  #btnScrollToTop {
-    display: none;
-    position: fixed;
-    bottom: 135px;
-    right: 0px;
-    left:10px;
-  }
-  
   #btnScrollToTop:hover {
     background-color: #555;
-  }}
+  }
