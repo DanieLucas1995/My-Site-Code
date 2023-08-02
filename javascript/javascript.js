@@ -643,28 +643,3 @@ observer.observe(triangleElement);
       element.classList.add("safari-firefox-only");
     });
   }
-
-
-    // Function to be executed when running on Firefox
-function onFirefox() {
-  // Your specific code for Firefox here
-  console.log("Running on Firefox");
-  // For example, you can add event listeners or perform other actions
-}
-
-// Function to be executed when running on Safari
-function onSafari() {
-  // Your specific code for Safari here
-  console.log("Running on Safari");
-  // For example, you can add event listeners or perform other actions
-}
-
-// Check if the user agent contains "Firefox"
-if (navigator.userAgent.indexOf("Firefox") !== -1) {
-  onFirefox(); // Call the function for Firefox
-}
-
-// Check if the browser is Safari
-if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
-  onSafari(); // Call the function for Safari
-}
