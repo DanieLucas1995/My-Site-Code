@@ -1202,7 +1202,7 @@ ul {
   font-family: Roboto, Arial;
   font-weight: 400;
   font-size: 38px;
-  margin-bottom: 98px;
+  margin-bottom: 150px;
   left: 50%; /* Posiciona o elemento horizontalmente no centro */
   transform: translateX(-50%); /* Centraliza horizontalmente */
   text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
