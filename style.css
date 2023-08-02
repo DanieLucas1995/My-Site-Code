@@ -34,18 +34,6 @@ dt.google-bert {
   margin-right: 25px;
 }
 
-.div3::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  height: 130%;
-  background-image: url(preto-com-linhas-azuis-imagens-imagem-de-fundo-wallpaper-para-pc-computador-tela-gratis-ambiente-de-trabalho.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
-}
 
 h3 {
   font-size: 36px;
@@ -2089,7 +2077,6 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     margin-right: 0px;
     position: relative;
     z-index: 0;
-    bottom: 0px;
 }
 
 @media screen and (min-width: 500px) and (max-width: 700px) {
@@ -2101,18 +2088,27 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     margin-right: -16px; /* Compensação para evitar o estouro do conteúdo */
   }
 
-  .div3::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 130%;
-    background-image: url(preto-com-linhas-azuis-imagens-imagem-de-fundo-wallpaper-para-pc-computador-tela-gratis-ambiente-de-trabalho.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
+.div3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-image: url(preto-com-linhas-azuis-imagens-imagem-de-fundo-wallpaper-para-pc-computador-tela-gratis-ambiente-de-trabalho.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
+
+@media screen and (min-width: 500px) and (max-width: 700px) {
+  .add {
+    width: 100%;
+    height: 4%;
+    max-height: calc(681px * var(--proporcao));
+    box-sizing: border-box; /* Adicionado para incluir margens e bordas na largura */
+    margin-right: -16px; /* Compensação para evitar o estouro do conteúdo */
+  }
 
   .div3 {
     width: 100%;
@@ -2121,9 +2117,7 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     margin-top: -54px; /* Ajuste o valor de acordo com a quantidade desejada de espaço */
     box-sizing: border-box; /* Adicionado para incluir margens e bordas na largura */
     margin-right: -16px; /* Compensação para evitar o estouro do conteúdo */
-  }
-
-}
+  }}
 
    #myImage {
       filter: brightness(1);
@@ -2195,25 +2189,19 @@ h6 {
   color: white;
 }
 
-#btnScrollToTop {
-  display: none;
-  position: fixed;
-  bottom: 115px;
-  right: 115mm;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  background-color: #000;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-}
-
 #btnScrollToTop:hover {
   background-color: #555;
 }
 
+@media (max-width: 499px) {
+  #btnScrollToTop {
+    display: none;
+    position: fixed;
+    bottom: 135px;
+    right: 0px;
+    left:10px;
+  }
+  
   #btnScrollToTop:hover {
     background-color: #555;
-  }
+  }}
