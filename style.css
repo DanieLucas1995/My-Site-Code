@@ -85,20 +85,7 @@ dt.google-bert {
     margin-right: 35px; /* Aumente a margem para Firefox */
   }
 }
-Neste exemplo, usamos as media queries para aplicar uma margem maior para Safari e Firefox. Você pode ajustar os valores das margens (40px para Safari e 35px para Firefox) de acordo com suas necessidades.
 
-Lembre-se de que as media queries podem ser usadas para aplicar estilos com base em outras características também, como tamanho de tela ou orientação. Aplique esses estilos adicionais conforme necessário.
-
-
-
-
-User
-além disso, coloque media queria max 499px acima 
-ChatGPT
-Claro! Você pode adicionar a media query para dispositivos com largura de tela até 499px, antes das media queries específicas para Safari e Firefox. Dessa forma, você terá um conjunto de estilos para dispositivos com largura de tela menor que 499px e outro conjunto para os navegadores Safari e Firefox. Aqui está como ficaria:
-
-css
-Copy code
 /* Estilos para dispositivos com largura de tela até 499px */
 @media screen and (max-width: 499px) {
   .clear-div > ul,
@@ -160,7 +147,6 @@ Copy code
     margin-right: 40px;
   }
 }
-
 
 h3 {
   font-size: 36px;
