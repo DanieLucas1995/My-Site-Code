@@ -501,7 +501,7 @@ header {
     display: none; /* Adicionado para ocultar a linha */
   }
   
-@media (min-width: 896px) {
+@media (min-width: 900px) {
   .menu-icon {
     display: none;
   }
