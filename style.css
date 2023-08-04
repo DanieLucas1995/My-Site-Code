@@ -19,6 +19,36 @@
     z-index: 0;
 }
 
+.contato {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  position: absolute;
+  font-size: 1.5em;
+  font-weight: bolder;
+  bottom: -6px;
+  margin-bottom: 669px;
+  margin-top: 0px;
+  z-index: 1;
+  padding: 8px;
+  border: 1px solid #979EA8;
+  border-bottom-width: 5px;
+  border-radius: 8px;
+  background-color: #F2F2F2;
+}
+
+.contato::after {
+content: '';
+display: block;
+width: 90%;
+height: 2px;
+background-color: #A58469;
+position: absolute;
+bottom: 31px;
+left: 11px;
+opacity: 0.4;
+}
+
 .div3::before {
       content: "";
       position: absolute;
@@ -1397,7 +1427,37 @@ ul {
 /* Estilos para Safari e Firefox */
 .safari-firefox-only {
   margin-top: 0px;
-}}
+}
+.contato {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  position: absolute;
+  font-size: 1.5em;
+  font-weight: bolder;
+  bottom: -6px;
+  margin-bottom: 669px;
+  margin-top: 0px;
+  z-index: 1;
+  padding: 10px;
+  border: 1px solid #979EA8;
+  border-bottom-width: 5px;
+  border-radius: 8px;
+  background-color: #F2F2F2;
+}
+
+.contato::after {
+content: '';
+display: block;
+width: 90%;
+height: 2px;
+background-color: #A58469;
+position: absolute;
+bottom: 31px;
+left: 11px;
+opacity: 0.4;
+}
+}
 
 @media (min-width: 400px) and (max-width: 1280px) {
 .linhaverde {
@@ -1437,35 +1497,7 @@ ul {
     display: none;
   }
 
-  .contato {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    position: absolute;
-    font-size: 1.5em;
-    font-weight: bolder;
-    bottom: -6px;
-    margin-bottom: 669px;
-    margin-top: 0px;
-    z-index: 1;
-    padding: 10px;
-    border: 1px solid #979EA8;
-    border-bottom-width: 5px;
-    border-radius: 8px;
-    background-color: #F2F2F2;
-}
 
-.contato::after {
-  content: '';
-  display: block;
-  width: 90%;
-  height: 2px;
-  background-color: #A58469;
-  position: absolute;
-  bottom: 31px;
-  left: 11px;
-  opacity: 0.4;
-}
 
 .formulario h2 {
  display:none;
