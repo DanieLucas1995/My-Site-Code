@@ -2229,6 +2229,61 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     right: 9px;
   }
 
+  .divider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+  }
+  
+  .square {
+    flex: 0 0 calc(33.33333333% - 26px);
+    max-width: calc(33.33333333% - 26px);
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #e1e1e1; /* Borda mais leve */
+    background-color: #ffffff; /* Cor de fundo branca */
+    min-height: 200px;
+    text-align: center;
+    color: #2c62cc; /* Nova cor do texto */
+    font-size: 16px;
+    line-height: 1.6;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-family: OpenSans, Arial;
+    
+  }
+  
+  .square:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .square-1 {
+    background-color: #ffffff; /* Tom mais suave de rosa */
+  }
+  
+  .square-2 {
+    background-color: #ffffff; /* Tom mais suave de verde */
+  }
+  
+  .square-3 {
+    background-color: #ffffff; /* Tom mais suave de azul */
+  }
+  
+  .square-4 {
+    background-color: #ffffff; /* Tom mais suave de amarelo */
+  }
+  
+  .square-5 {
+    background-color: #ffffff; /* Combinação suave de rosa e amarelo */
+  }
+  
+  .square-6 {
+    background-color: #ffffff; /* Combinação suave de azul e verde */
+  }
+  
+
 @media screen and (min-width: 500px) and (max-width: 700px) {
   .add {
     width: 100%;
