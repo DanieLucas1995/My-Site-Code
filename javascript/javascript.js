@@ -615,52 +615,37 @@ function handleIntersection(entries, observer) {
 }
 
 //Bloco 32
+const carousel = document.getElementById("carousel");
+const squares = document.querySelectorAll(".square");
 
+let startX = 0;
+let scrollLeft = 0;
 let isDragging = false;
-  let startPosX = 0;
-  let offsetX = 0;
-  let activeIndex = -1;
 
-  const squares = document.querySelectorAll('.square');
+carousel.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
 
-  squares.forEach((square, index) => {
-    square.addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      square.classList.add('active');
-      isDragging = true;
-      startPosX = e.clientX;
-      offsetX = 0;
-      activeIndex = index;
-    });
+carousel.addEventListener("mouseleave", () => {
+  isDragging = false;
+});
 
-    square.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      offsetX = e.clientX - startPosX;
-      squares.forEach((s, i) => {
-        if (i === activeIndex) {
-          s.style.transform = `translateX(${offsetX}px)`;
-        } else {
-          s.style.transform = `translateX(calc(-100% + ${offsetX}px))`;
-        }
-      });
-    });
+carousel.addEventListener("mouseup", () => {
+  isDragging = false;
+});
 
-    square.addEventListener('mouseup', () => {
-      isDragging = false;
-      offsetX = 0;
-      squares.forEach((s) => {
-        s.classList.remove('active');
-        s.style.transform = '';
-      });
-    });
+carousel.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const x = e.pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 3; // Ajuste a sensibilidade do movimento
+  carousel.scrollLeft = scrollLeft - walk;
+});
 
-    square.addEventListener('mouseleave', () => {
-      if (!isDragging) return;
-      isDragging = false;
-      offsetX = 0;
-      squares.forEach((s) => {
-        s.classList.remove('active');
-        s.style.transform = '';
-      });
-    });
-  });
+// Adicione este trecho para ajustar automaticamente o posicionamento a cada intervalo
+setInterval(() => {
+  const currentIndex = Math.round(carousel.scrollLeft / squares[0].offsetWidth);
+  carousel.scrollLeft = currentIndex * squares[0].offsetWidth;
+}, 1800);

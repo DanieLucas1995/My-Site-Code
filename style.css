@@ -2207,8 +2207,13 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     padding-bottom: 20px;
   }
   
-  .active {
-    transform: translateX(-100%);
+  .carousel2 {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+
   }
 
   .square {
@@ -2228,8 +2233,8 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     font-family: OpenSans, Arial;
   }
 
-  .transition {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  .no-select {
+    user-select: none;
   }
   
   .square:hover {
@@ -2265,6 +2270,19 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
   .square-6 {
     background-color: #ffffff; /* Combinação suave de azul e verde */
     cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    .carousel {
+      justify-content: flex-start;
+      scroll-behavior: smooth;
+      scroll-snap-align: start;
+    }
+  
+    .square {
+      flex: 0 0 calc(100% - 20px);
+      max-width: calc(100% - 20px);
+    }
   }
   
 
