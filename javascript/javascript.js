@@ -614,3 +614,53 @@ function handleIntersection(entries, observer) {
   });
 }
 
+//Bloco 32
+
+let isDragging = false;
+  let startPosX = 0;
+  let offsetX = 0;
+  let activeIndex = -1;
+
+  const squares = document.querySelectorAll('.square');
+
+  squares.forEach((square, index) => {
+    square.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      square.classList.add('active');
+      isDragging = true;
+      startPosX = e.clientX;
+      offsetX = 0;
+      activeIndex = index;
+    });
+
+    square.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      offsetX = e.clientX - startPosX;
+      squares.forEach((s, i) => {
+        if (i === activeIndex) {
+          s.style.transform = `translateX(${offsetX}px)`;
+        } else {
+          s.style.transform = `translateX(calc(-100% + ${offsetX}px))`;
+        }
+      });
+    });
+
+    square.addEventListener('mouseup', () => {
+      isDragging = false;
+      offsetX = 0;
+      squares.forEach((s) => {
+        s.classList.remove('active');
+        s.style.transform = '';
+      });
+    });
+
+    square.addEventListener('mouseleave', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      offsetX = 0;
+      squares.forEach((s) => {
+        s.classList.remove('active');
+        s.style.transform = '';
+      });
+    });
+  });

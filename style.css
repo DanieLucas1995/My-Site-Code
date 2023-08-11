@@ -2205,9 +2205,12 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     margin-top: 0px;
     padding-top: 200px;
     padding-bottom: 20px;
-    background-color: #332E29;
   }
   
+  .active {
+    transform: translateX(-100%);
+  }
+
   .square {
     flex: 0 0 calc(33.33333333% - 26px);
     max-width: calc(33.33333333% - 26px);
@@ -2223,7 +2226,10 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     font-family: OpenSans, Arial;
-    
+  }
+
+  .transition {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
   .square:hover {
@@ -2233,26 +2239,32 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
   
   .square-1 {
     background-color: #ffffff; /* Tom mais suave de rosa */
+    cursor: pointer;
   }
   
   .square-2 {
     background-color: #ffffff; /* Tom mais suave de verde */
+    cursor: pointer;
   }
   
   .square-3 {
     background-color: #ffffff; /* Tom mais suave de azul */
+     cursor: pointer;
   }
   
   .square-4 {
     background-color: #ffffff; /* Tom mais suave de amarelo */
+    cursor: pointer;
   }
   
   .square-5 {
     background-color: #ffffff; /* Combinação suave de rosa e amarelo */
+    cursor: pointer;
   }
   
   .square-6 {
     background-color: #ffffff; /* Combinação suave de azul e verde */
+    cursor: pointer;
   }
   
 
