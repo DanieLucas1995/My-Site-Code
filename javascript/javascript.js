@@ -392,11 +392,13 @@ $(document).ready(function() {
   }
 
   function setupClickHandler() {
-    $('.next-arrow').off('click').on('click', function() {
+    $('.next-arrow').off('click').on('click', function(e) {
+      e.preventDefault();
       showNextProject();
     });
 
-    $('.prev-arrow').off('click').on('click', function() {
+    $('.prev-arrow').off('click').on('click', function(e) {
+      e.preventDefault();
       showPrevProject();
     });
   }
@@ -406,7 +408,42 @@ $(document).ready(function() {
 
   setupClickHandler();
 });
+$(document).ready(function() {
+  var $carousel = $('#carousel');
+  var $projs = $carousel.find('.proj');
+  var currentIndex = 0;
+  
+  function showNextProject() {
+    $projs.eq(currentIndex).fadeOut(function() {
+      currentIndex = (currentIndex + 1) % $projs.length;
+      $projs.eq(currentIndex).fadeIn();
+    });
+  }
 
+  function showPrevProject() {
+    $projs.eq(currentIndex).fadeOut(function() {
+      currentIndex = (currentIndex - 1 + $projs.length) % $projs.length;
+      $projs.eq(currentIndex).fadeIn();
+    });
+  }
+
+  function setupClickHandler() {
+    $('.next-arrow').off('click').on('click', function(e) {
+      e.preventDefault();
+      showNextProject();
+    });
+
+    $('.prev-arrow').off('click').on('click', function(e) {
+      e.preventDefault();
+      showPrevProject();
+    });
+  }
+
+  $projs.hide(); // Esconder todos os projetos inicialmente
+  $projs.eq(currentIndex).fadeIn(); // Mostrar o primeiro projeto
+
+  setupClickHandler();
+});
 
 
 // Bloco 25
@@ -615,7 +652,7 @@ function handleIntersection(entries, observer) {
 }
 
 //Bloco 32
-const carousel = document.getElementById("carousel");
+const carousel = document.getElementById("carousel2");
 const squares = document.querySelectorAll(".square");
 
 let startX = 0;
