@@ -1249,7 +1249,7 @@ ul {
 }
 .div2 .barra-green {
   background-color: #8E8A1E;
-  height: 202px;
+  height: 236px;
 }
 .div2 .barra-white{
   background-color: #FFFFFF;
@@ -1619,7 +1619,7 @@ opacity: 0.4;
 .preencher {
   position: relative;
   width: 18cm;
-  height: 129px;
+  height: 150px;
   background-color: #1F1F27;
 }
 
@@ -1629,7 +1629,7 @@ opacity: 0.4;
   background-color: #3D444E;
   left: 59px;
   top: -520px;
-  bottom: 138px;
+  bottom: 158px;
   width: 2px;
   border-radius: 0px;
   z-index: 1000;
@@ -1697,7 +1697,7 @@ opacity: 0.4;
 
 .div2 .barra-jogos {
   position: absolute;
-  top: -394mm;
+  top: -1471px;
   right: -2mm;
   height: 118%;
   width: 8px;
@@ -1852,7 +1852,7 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
 
   .add2 img {
    position: absolute;
-    top: -306px;
+    top: -282px;
     right: 110px;
 }
 
@@ -2007,9 +2007,9 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
   
   .proj {
     width: 91mm;
-    height: 452px;
+    height: 475px;
     position: absolute;
-    top: -104px;
+    top: -84px;
     left: 224mm;
     bottom: 22cm;
     padding-left: 104px;
@@ -2068,7 +2068,7 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
     background-image: url(free-css-particle-backgrounds-4.jpg);
     z-index: -1;
     position: absolute;
-    top: -295px;
+    top: -275px;
     left: 665px;
     width: 51%;
     height: 304mm;
@@ -2133,7 +2133,7 @@ opacity: 0.4; /* Opacidade da imagem (valor entre 0 e 1) */
   
   .prev-arrow{
     top: -26px;
-    right: -4%;
+    right: -14px;
   }
 
 .flag-icon {

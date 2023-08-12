@@ -622,24 +622,24 @@ let startX = 0;
 let scrollLeft = 0;
 let isDragging = false;
 
-carousel.addEventListener("touchstart", (e) => {
+carousel.addEventListener("mousedown", (e) => {
   isDragging = true;
-  startX = e.touches[0].pageX - carousel.offsetLeft;
+  startX = e.pageX - carousel.offsetLeft;
   scrollLeft = carousel.scrollLeft;
 });
 
-carousel.addEventListener("touchend", () => {
+carousel.addEventListener("mouseleave", () => {
   isDragging = false;
 });
 
-carousel.addEventListener("touchcancel", () => {
+carousel.addEventListener("mouseup", () => {
   isDragging = false;
 });
 
-carousel.addEventListener("touchmove", (e) => {
+carousel.addEventListener("mousemove", (e) => {
   if (!isDragging) return;
   e.preventDefault();
-  const x = e.touches[0].pageX - carousel.offsetLeft;
+  const x = e.pageX - carousel.offsetLeft;
   const walk = (x - startX) * 3; // Ajuste a sensibilidade do movimento
   carousel.scrollLeft = scrollLeft - walk;
 });
