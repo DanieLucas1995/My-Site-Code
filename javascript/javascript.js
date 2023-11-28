@@ -686,3 +686,21 @@ setInterval(() => {
   const currentIndex = Math.round(carousel.scrollLeft / squares[0].offsetWidth);
   carousel.scrollLeft = currentIndex * squares[0].offsetWidth;
 }, 1800);
+
+var currentImageIndex = 0;
+var images = document.getElementsByClassName("sliderImage");
+
+function showImage(index) {
+  for (var i = 0; i < images.length; i++) {
+    images[i].style.display = "none";
+  }
+  images[index].style.display = "block";
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  showImage(currentImageIndex);
+}
+
+// Mostra a primeira imagem ao carregar a página
+showImage(currentImageIndex);
