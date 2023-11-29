@@ -1319,7 +1319,18 @@ ul {
   padding: 10px;
   border: none;
   border-radius: 5px;
+  transition: opacity 0.3s ease; /* Adiciona uma transição suave para a propriedade de opacidade */
 }
+
+#nextBtn:hover,
+#nextBtn.transparent {
+  opacity: 1; /* Opacidade total ao passar o mouse ou quando a classe "transparent" está presente */
+}
+
+#nextBtn:not(:hover):not(.transparent) {
+  opacity: 0.8; /* Opacidade reduzida quando não estiver passando o mouse e a classe "transparent" não está presente */
+}
+
 
 @media (min-width: 500px) and (max-width: 1100px) {
   .palestra {
