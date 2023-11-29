@@ -1323,7 +1323,7 @@ ul {
 @media (min-width: 500px) and (max-width: 1100px) {
   .palestra {
     overflow: hidden;
-    height: 112vh;
+    height: 55vh;
     transform: translateX(7%);
     opacity: 0;
     /* Definindo a opacidade inicial como 0 (invisível) */
