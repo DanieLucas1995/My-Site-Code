@@ -681,8 +681,15 @@ carousel.addEventListener("mousemove", (e) => {
   carousel.scrollLeft = scrollLeft - walk;
 });
 
-// Adicione este trecho para ajustar automaticamente o posicionamento a cada intervalo
+// 33 Adicione este trecho para ajustar automaticamente o posicionamento a cada intervalo
+var nextBtn = document.getElementById("nextBtn");
+
+function makeButtonTransparent() {
+  nextBtn.classList.add("transparent");
+}
+
 setInterval(() => {
+  makeButtonTransparent();
   const currentIndex = Math.round(carousel.scrollLeft / squares[0].offsetWidth);
   carousel.scrollLeft = currentIndex * squares[0].offsetWidth;
 }, 1800);
@@ -700,7 +707,19 @@ function showImage(index) {
 function nextImage() {
   currentImageIndex = (currentImageIndex + 1) % images.length;
   showImage(currentImageIndex);
+  nextBtn.classList.remove("transparent"); // Remove a classe transparent quando a imagem muda
 }
 
 // Mostra a primeira imagem ao carregar a página
 showImage(currentImageIndex);
+
+nextBtn.addEventListener("click", function() {
+  this.classList.toggle("transparent");
+});
+
+// Adiciona a classe transparent automaticamente após 2 segundos (ajuste conforme necessário)
+setTimeout(() => {
+  makeButtonTransparent();
+}, 2000);
+
+

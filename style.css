@@ -650,6 +650,7 @@ header {
     justify-content: space-around;
     height: 500px;
     top: 48px;
+    align-items: center; /* Adicionado para centralizar o conteúdo na direção transversal (vertical) */
   }
 
   .seçoes li {
