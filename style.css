@@ -743,6 +743,13 @@ a {
   .confeti {
     display: none;
   }
+  .confeti2 {
+    position: relative;
+    margin-top: 0px; /* Ajuste conforme necessário */
+    margin-left: 854px; /* Ajuste conforme necessário */
+    z-index: 999999; /* Certifique-se de que o valor do z-index seja maior que outros elementos na página */
+    bottom: 399px
+  }
 }
 
 @media (min-width: 1280px) {
@@ -752,6 +759,10 @@ a {
     margin-left: 854px; /* Ajuste conforme necessário */
     z-index: 999999; /* Certifique-se de que o valor do z-index seja maior que outros elementos na página */
     bottom: 399px
+  }
+
+  .confeti2 {
+    display: none;
   }
 
   .add {
@@ -1810,7 +1821,7 @@ ul {
 /* Adicione estilos conforme necessário */
 #depoimentos {
   text-align: center;
-  padding-bottom: 21px;
+  padding-bottom: 0px; /* or 21px */
   padding-top: 20px;
 
 }
