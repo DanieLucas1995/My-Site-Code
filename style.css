@@ -1763,9 +1763,14 @@ ul {
   }
 
 
-  .prev-arrow,
+  .prev-arrow{
+    color: #d33f1d;
+    cursor: pointer;
+    margin-left: 20px
+  }
+  
   .next-arrow {
-    color: #332e29;
+    color: #009cab;
     cursor: pointer;
     margin-left: 20px
   }
