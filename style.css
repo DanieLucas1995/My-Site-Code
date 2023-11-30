@@ -1784,6 +1784,22 @@ ul {
   margin-right: -10px;
 }
 
+/* Adicione estilos conforme necessário */
+#depoimentos {
+  text-align: center;
+}
+
+.testimonial {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  color: #140E25;
+}
+
+
 .add {
   display: flex;
   justify-content: center;
