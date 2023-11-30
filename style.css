@@ -739,6 +739,29 @@ a {
   }
 }
 
+@media (max-width: 1279px) {
+  .confeti {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .confeti {
+    position: relative;
+    margin-top: 0px; /* Ajuste conforme necessário */
+    margin-left: 854px; /* Ajuste conforme necessário */
+    z-index: 999999; /* Certifique-se de que o valor do z-index seja maior que outros elementos na página */
+    bottom: 399px
+  }
+
+  .add {
+    display: flex;
+    justify-content: center;
+    margin-top: -405px;
+  }
+}
+
+
 @media (max-width: 1080px) {
   body {
     overflow-x: hidden;
@@ -1787,18 +1810,11 @@ ul {
 /* Adicione estilos conforme necessário */
 #depoimentos {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 21px;
   padding-top: 20px;
 
 }
 
-.confeti {
-  position: absolute;
-  top: 5343px;
-  margin-left: 13px;
-  left: 900px;
-  z-index: 999999; /* Certifique-se de que o valor do z-index seja maior que outros elementos na página */
-}
 
 .testimonial {
   max-width: 600px;
@@ -1814,7 +1830,7 @@ ul {
 .add {
   display: flex;
   justify-content: center;
-  margin-top: 0px;
+
 }
 
 .add img {
