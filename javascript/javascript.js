@@ -1,17 +1,17 @@
 // Bloco 1
-window.addEventListener('beforeunload', function() {
+window.addEventListener('beforeunload', function () {
   // Rola a página para o topo antes da atualização
   window.scrollTo(0, 0);
 });
 
 // Bloco 2
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Animar imagem com delay de 1 segundo
   var img = document.querySelector('.IMGP img');
   img.style.animationDelay = '1s';
 
   // Função chamada ao rolar a página
-  window.onscroll = function() {
+  window.onscroll = function () {
     scrollFunction();
     checkScrollEnd();
   };
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Bloco 3
-window.onload = function() {
+window.onload = function () {
   // Rolar para o topo da página ao carregar
   window.scrollTo(0, 0);
 };
@@ -69,7 +69,7 @@ gsap.to("h1", {
 });
 
 // Bloco 5: H3
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', function (event) {
   var textToType = "Bibliotecas em Nuvem, Frameworks e Plataformas";
   var h3Element = document.querySelector("h3");
 
@@ -82,12 +82,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
       if (i === 5 || i === 11) {
         // Adicione um atraso maior após a digitação
-        setTimeout(function() {
+        setTimeout(function () {
           typeWriter(text, i + 1, fnCallback);
         }, 200); // Atraso de 200 milissegundos
       } else {
         // Aumente um pouco o tempo de espera para 15 milissegundos (0.015 segundos)
-        setTimeout(function() {
+        setTimeout(function () {
           typeWriter(text, i + 1, fnCallback);
         }, 15);
       }
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 });
 
 // Bloco 7
-$(document).ready(function() {
+$(document).ready(function () {
   // Estilizar barra de rolagem personalizada
   var divBackgroundColor = $('.custom-scrollbar').css('background-color');
   var scrollbarStyle = `
@@ -140,9 +140,9 @@ $(document).ready(function() {
 });
 
 // Bloco 8
-$(document).ready(function() {
+$(document).ready(function () {
   // Animação do elemento após 5 segundos
-  setTimeout(function() {
+  setTimeout(function () {
     $('.header-before').css('width', '0');
     $('.header-before').animate({ width: '50%' }, 1100);
   }, 5000); // 5000 milissegundos = 5 segundos
@@ -172,7 +172,7 @@ function animateBars() {
 // Inicie a animação das barras
 animateBars();
 
-  
+
 // Bloco 10
 function isElementInViewport(element) {
   // Verifica se o elemento está visível no viewport
@@ -237,12 +237,12 @@ window.addEventListener('load', fadeInDiv1);
 // Bloco 15
 var rotateImages = document.querySelectorAll('.rotate-image');
 
-rotateImages.forEach(function(image) {
-  image.addEventListener('mouseover', function() {
+rotateImages.forEach(function (image) {
+  image.addEventListener('mouseover', function () {
     this.style.transform = 'rotate(360deg)';
   });
 
-  image.addEventListener('mouseout', function() {
+  image.addEventListener('mouseout', function () {
     this.style.transform = 'rotate(0deg)';
   });
 });
@@ -275,8 +275,8 @@ window.addEventListener('resize', checkWindowSize);
 checkWindowSize();
 
 // Bloco 17
-$(document).ready(function() {
-  $(window).scroll(function() {
+$(document).ready(function () {
+  $(window).scroll(function () {
     var curvaOffset = $('.curva').offset().top;
     var scrollTop = $(window).scrollTop();
     var windowHeight = $(window).height();
@@ -338,7 +338,7 @@ function changeLanguage(language, selectedOption) {
   languageOptionsContainer.style.display = 'none';
 
   // Remover a classe "selected" de todos os itens do menu de idiomas
-  languageOptions.forEach(function(option) {
+  languageOptions.forEach(function (option) {
     option.classList.remove('selected');
   });
 
@@ -372,32 +372,32 @@ function toggleLanguageOptions() {
 
 // Bloco 24
 
-$(document).ready(function() {
+$(document).ready(function () {
   var $carousel = $('#carousel');
   var $projs = $carousel.find('.proj');
   var currentIndex = 0;
-  
+
   function showNextProject() {
-    $projs.eq(currentIndex).fadeOut(function() {
+    $projs.eq(currentIndex).fadeOut(function () {
       currentIndex = (currentIndex + 1) % $projs.length;
       $projs.eq(currentIndex).fadeIn();
     });
   }
 
   function showPrevProject() {
-    $projs.eq(currentIndex).fadeOut(function() {
+    $projs.eq(currentIndex).fadeOut(function () {
       currentIndex = (currentIndex - 1 + $projs.length) % $projs.length;
       $projs.eq(currentIndex).fadeIn();
     });
   }
 
   function setupClickHandler() {
-    $('.next-arrow').off('click').on('click', function(e) {
+    $('.next-arrow').off('click').on('click', function (e) {
       e.preventDefault();
       showNextProject();
     });
 
-    $('.prev-arrow').off('click').on('click', function(e) {
+    $('.prev-arrow').off('click').on('click', function (e) {
       e.preventDefault();
       showPrevProject();
     });
@@ -408,32 +408,32 @@ $(document).ready(function() {
 
   setupClickHandler();
 });
-$(document).ready(function() {
+$(document).ready(function () {
   var $carousel = $('#carousel');
   var $projs = $carousel.find('.proj');
   var currentIndex = 0;
-  
+
   function showNextProject() {
-    $projs.eq(currentIndex).fadeOut(function() {
+    $projs.eq(currentIndex).fadeOut(function () {
       currentIndex = (currentIndex + 1) % $projs.length;
       $projs.eq(currentIndex).fadeIn();
     });
   }
 
   function showPrevProject() {
-    $projs.eq(currentIndex).fadeOut(function() {
+    $projs.eq(currentIndex).fadeOut(function () {
       currentIndex = (currentIndex - 1 + $projs.length) % $projs.length;
       $projs.eq(currentIndex).fadeIn();
     });
   }
 
   function setupClickHandler() {
-    $('.next-arrow').off('click').on('click', function(e) {
+    $('.next-arrow').off('click').on('click', function (e) {
       e.preventDefault();
       showNextProject();
     });
 
-    $('.prev-arrow').off('click').on('click', function(e) {
+    $('.prev-arrow').off('click').on('click', function (e) {
       e.preventDefault();
       showPrevProject();
     });
@@ -472,7 +472,7 @@ function changeLanguage(language, selectedOption) {
   languageOptionsContainer.style.display = 'none';
 
   // Remover a classe "selected" de todos os itens do menu de idiomas
-  languageOptions.forEach(function(option) {
+  languageOptions.forEach(function (option) {
     option.classList.remove('selected');
   });
 
@@ -518,8 +518,8 @@ function scrollToSection(target) {
 var sectionLinks = document.querySelectorAll('.seçoes a');
 
 // Adiciona um evento de clique a cada link de seção
-sectionLinks.forEach(function(link) {
-  link.addEventListener('click', function(event) {
+sectionLinks.forEach(function (link) {
+  link.addEventListener('click', function (event) {
     event.preventDefault(); // Evita o comportamento padrão do link
 
     var target = link.getAttribute('href'); // Obtém o valor do atributo href do link
@@ -570,12 +570,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 // Bloco 29
-$(document).ready(function() {
+$(document).ready(function () {
   $('.line').hide();
   $('.language-options').hide(); // Ocultar inicialmente as opções de idioma
 
-  $('.menu-icon').click(function() {
-    $('.line').toggle(function() {
+  $('.menu-icon').click(function () {
+    $('.line').toggle(function () {
       if ($('.line').is(':visible')) {
         $('.language-options').hide().fadeIn(500); // Mostrar as opções de idioma com um efeito de fading de 0,5 segundos quando a animação estiver concluída e a seção do menu estiver visível
       } else {
@@ -589,56 +589,56 @@ $(document).ready(function() {
 
 // Bloco 30
 
- function enviarFormulario() {
-      var form = document.querySelector('form');
-      var formData = new FormData(form);
+function enviarFormulario() {
+  var form = document.querySelector('form');
+  var formData = new FormData(form);
 
-      fetch(form.action, {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 'success') {
-          mostrarMensagem(data.message, true);
-        } else {
-          mostrarMensagem(data.message, false);
-        }
-      })
-      .catch(error => {
-        mostrarMensagem('Houve um problema ao enviar o formulário. Por favor, tente novamente mais tarde.', false);
-      });
-
-      return false; // Evita que o formulário seja submetido normalmente
-    }
-
-    function mostrarMensagem(mensagem, sucesso) {
-      var mensagemDiv = document.createElement('div');
-      mensagemDiv.classList.add('mensagem');
-
-      if (sucesso) {
-        mensagemDiv.classList.add('sucesso');
+  fetch(form.action, {
+    method: 'POST',
+    body: formData
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        mostrarMensagem(data.message, true);
       } else {
-        mensagemDiv.classList.add('erro');
+        mostrarMensagem(data.message, false);
       }
+    })
+    .catch(error => {
+      mostrarMensagem('Houve um problema ao enviar o formulário. Por favor, tente novamente mais tarde.', false);
+    });
 
-      mensagemDiv.innerText = mensagem;
+  return false; // Evita que o formulário seja submetido normalmente
+}
 
-      var formularioDiv = document.querySelector('.formulario');
-      formularioDiv.appendChild(mensagemDiv);
+function mostrarMensagem(mensagem, sucesso) {
+  var mensagemDiv = document.createElement('div');
+  mensagemDiv.classList.add('mensagem');
 
-      // Remover a mensagem após alguns segundos (opcional)
-      setTimeout(function() {
-        mensagemDiv.remove();
-      }, 5000);
-    }
+  if (sucesso) {
+    mensagemDiv.classList.add('sucesso');
+  } else {
+    mensagemDiv.classList.add('erro');
+  }
 
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Para ter uma animação suave ao rolar para cima
-      });
-    }
+  mensagemDiv.innerText = mensagem;
+
+  var formularioDiv = document.querySelector('.formulario');
+  formularioDiv.appendChild(mensagemDiv);
+
+  // Remover a mensagem após alguns segundos (opcional)
+  setTimeout(function () {
+    mensagemDiv.remove();
+  }, 5000);
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Para ter uma animação suave ao rolar para cima
+  });
+}
 // Função que será chamada quando o elemento entrar na área visível do usuário
 function handleIntersection(entries, observer) {
   entries.forEach(entry => {
