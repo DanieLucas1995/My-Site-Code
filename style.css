@@ -753,6 +753,14 @@ a {
     z-index: 999999; /* Certifique-se de que o valor do z-index seja maior que outros elementos na página */
     bottom: 399px
   }
+  
+  
+  #depoimentos {
+    text-align: center;
+    padding-bottom: 42px;
+    padding-top: 20px;
+    background-color: #1F1F27;
+  }
 
   .confeti2 {
     display: none;
@@ -1433,9 +1441,9 @@ ul {
   padding: 1px;
   padding-bottom: -5px;
   line-height: 26px;
-  padding-left: 60px;
   position: relative;
   z-index: 999;
+  padding-left: 80px
 }
 
 @media (min-width: 500px) and (max-width: 1280px) {
@@ -1813,7 +1821,7 @@ ul {
 
 #depoimentos {
   text-align: center;
-  padding-bottom: 21px;
+  padding-bottom: 42px;
   padding-top: 20px;
 
 }
@@ -1845,37 +1853,6 @@ ul {
 }
 
 @media (min-width: 1281px) {
-  .preencher {
-    position: relative;
-    width: 18cm;
-    height: 150px;
-    background-color: #1F1F27;
-  }
-
-  .preencher::before,
-  .preencher::after {
-    content: "";
-    position: absolute;
-    background-color: #3D444E;
-    left: 59px;
-    top: -520px;
-    bottom: 158px;
-    width: 2px;
-    border-radius: 0px;
-    z-index: 1000;
-  }
-
-  .preencher::after {
-    position: absolute;
-    background-color: #3D444E;
-    left: 4%;
-    top: -11px;
-    bottom: -85px;
-    width: 8px;
-    border-radius: 0px;
-    z-index: 1000;
-  }
-
 
   .div3 {
     color: #4A535B;
@@ -1992,7 +1969,7 @@ ul {
     right: 17px;
     margin-top: 2px;
     z-index: 999999;
-    margin-bottom: 1773px;
+    margin-bottom: 1770px;
   }
 }
 
@@ -2100,7 +2077,6 @@ ul {
   .add {
     display: flex;
     justify-content: center;
-    margin-top: 0px;
   }
 
   .add img {
@@ -2309,15 +2285,6 @@ ul {
     color: #332e29;
   }
 
-  .fundo {
-    background-image: url(free-css-particle-backgrounds-4.jpg);
-    z-index: -1;
-    position: absolute;
-    top: -275px;
-    left: 665px;
-    width: 100%;
-    height: 304mm;
-  }
 
   .linhaverde {
     width: 144mm;
@@ -2328,8 +2295,8 @@ ul {
     overflow: hidden;
     opacity: 1.0;
     bottom: 183px;
-    left: 194mm;
-    transform: rotate(0deg);
+    left: 155mm;
+    transform: rotate(180deg);
     transition: transform 0.5s ease;
   }
 
