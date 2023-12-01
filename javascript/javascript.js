@@ -704,3 +704,14 @@ function nextImage() {
 
 // Mostra a primeira imagem ao carregar a página
 showImage(currentImageIndex);
+
+
+// 34 Verifica se a API de orientação de tela é suportada
+if (screen.orientation) {
+  // Bloqueia a orientação da tela para retrato
+  screen.orientation.lock('portrait').then(function() {
+    console.log('Orientação da tela bloqueada com sucesso em modo retrato.');
+  }).catch(function(error) {
+    console.error('Falha ao bloquear a orientação:', error);
+  });
+}
