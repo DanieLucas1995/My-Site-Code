@@ -759,7 +759,7 @@ a {
     text-align: center;
     padding-bottom: 42px;
     padding-top: 20px;
-    background-color: #1F1F27;
+    background-color: white;
   }
 
   .confeti2 {
@@ -1437,13 +1437,16 @@ ul {
 .div2 {
   background-color: #1F1F27;
   color: #ffffff;
-  text-align: justify;
+  text-align: center;
   padding: 1px;
   padding-bottom: -5px;
   line-height: 26px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   z-index: 999;
-  padding-left: 80px
+  padding-left: 0px
 }
 
 @media (min-width: 500px) and (max-width: 1280px) {
@@ -1593,7 +1596,7 @@ ul {
   }
 }
 
-@media (min-width: 500px) and (max-width: 1280px) {
+@media (min-width: 500px) and (max-width: 2000px) {
   .proj {
     padding-top: 100px;
     background-color: white;
@@ -1601,6 +1604,7 @@ ul {
     margin-top: 10px;
     margin-left: -10px;
     margin-right: -10px;
+    text-align: justify;
   }
 
   .proj h2 {
@@ -2211,7 +2215,7 @@ ul {
     font-weight: 500;
     color: #5BC478;
     animation: neon-glow 1s ease-in-out infinite alternate;
-    margin-left: 54mm;
+    margin-left: 0mm;
   }
 
   h5 {
@@ -2221,26 +2225,10 @@ ul {
     font-weight: 500;
     color: #5BC478;
     animation: neon-glow 1s ease-in-out infinite alternate;
-    margin-left: 100px;
+    margin-left: 0px;
   }
 
-  .proj {
-    width: 91mm;
-    height: 475px;
-    position: absolute;
-    top: -84px;
-    left: 224mm;
-    bottom: 22cm;
-    padding-left: 104px;
-    right: 9cm;
-    text-align: justify;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(3px);
-    margin-top: 10px
-  }
+
 
   .carousel-container {
     position: relative;
@@ -2294,8 +2282,8 @@ ul {
     border-radius: 5px;
     overflow: hidden;
     opacity: 1.0;
-    bottom: 183px;
-    left: 155mm;
+    bottom: -764px;
+    left: 0mm;
     transform: rotate(180deg);
     transition: transform 0.5s ease;
   }
@@ -2315,8 +2303,8 @@ ul {
     font-weight: 400;
     font-size: 38px;
     z-index: 99999;
-    top: -7cm;
-    right: 62mm;
+    top: 3000px;
+    right: 882px;
     text-shadow: 2px 2px 4px rgb(92, 196, 121, 0.9);
 
   }
