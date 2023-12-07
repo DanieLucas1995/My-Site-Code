@@ -2302,10 +2302,12 @@ ul {
     font-family: Roboto, Arial;
     font-weight: 400;
     font-size: 38px;
-    z-index: 99999;
-    top: 3000px;
-    right: 882px;
-    text-shadow: 2px 2px 4px rgb(92, 196, 121, 0.9);
+    margin-bottom: 150px;
+    left: 50%;
+    top: 3270px;
+    transform: translateX(-50%);
+    text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
+}
 
   }
 
@@ -2365,7 +2367,7 @@ ul {
       transform: rotate(0);
     }
   }
-}
+
 
 @media only screen and (max-width: 767px) {
 
