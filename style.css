@@ -1893,7 +1893,6 @@ ul {
     background-color: white;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    height: 28vh;
     margin-top: -99px;
   }
 
@@ -1901,10 +1900,9 @@ ul {
     margin-top: 654px;
     z-index: 99999;
     position: absolute;
-    left: 58%;
-    transform: translateX(-53%) rotate(180deg);
+    left: 50%;
+    transform: translateX(0%) rotate(180deg);
     width: 200px;
-    bottom: -265px;
   }
 
   .div2 .barra-jogos {
