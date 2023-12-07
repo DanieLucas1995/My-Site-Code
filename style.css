@@ -1966,6 +1966,7 @@ ul {
     /* Opacidade da imagem (valor entre 0 e 1) */
   }
 
+
  /* Triângulo exibido em telas com largura de 981px ou mais */
 @media (min-width: 1738px) {
   .triangle {
@@ -1974,8 +1975,15 @@ ul {
     right: 17px;
     margin-top: 2px;
     z-index: 999999;
-    margin-bottom: 1770px;
-  }
+    margin-bottom: 1770px;}
+
+    .add2 img {
+      position: absolute;
+      top: -282px;
+      right: 110px;
+    }
+    
+  
 }
 
 
@@ -2071,12 +2079,6 @@ ul {
     color: black;
     margin-left: -10px;
     margin-right: -10px;
-  }
-
-  .add2 img {
-    position: absolute;
-    top: -282px;
-    right: 110px;
   }
 
   .add {
