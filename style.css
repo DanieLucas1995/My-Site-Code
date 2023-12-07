@@ -771,6 +771,7 @@ a {
     justify-content: center;
     margin-top: -405px;
   }
+  
 }
 
 
@@ -978,6 +979,21 @@ body::-webkit-scrollbar-track {
   z-index: 1;
   /* Define uma ordem de empilhamento maior que o retângulo */
 }
+
+@media (min-width: 1329px) {
+.titulo {
+  color: white;
+  position: absolute;
+  font-family: Roboto, Arial;
+  font-weight: 400;
+  font-size: 38px;
+  margin-bottom: 150px;
+  left: 50%;
+  top: 3018px;
+  transform: translateX(-50%);
+  text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
+  z-index: 100000000000;
+}}
 
 @media (max-width: 1328px) {
 
@@ -1874,19 +1890,7 @@ ul {
     z-index: 0;
   }
 
-.titulo {
-  color: white;
-  position: absolute;
-  font-family: Roboto, Arial;
-  font-weight: 400;
-  font-size: 38px;
-  margin-bottom: 150px;
-  left: 50%;
-  top: 3270px;
-  transform: translateX(-50%);
-  text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
-  z-index: 100000000000;
-}
+
 
   .div3::before {
     content: "";
@@ -1936,7 +1940,6 @@ ul {
     font-weight: 500;
     color: #5BC478;
     animation: neon-glow 1s ease-in-out infinite alternate;
-    margin-left: 115px;
   }
 
   /* Estilos específicos para o idioma espanhol */
@@ -1946,7 +1949,7 @@ ul {
     font-weight: 500;
     color: #5BC478;
     animation: neon-glow 1s ease-in-out infinite alternate;
-    margin-left: 145px;
+  
   }
 
   /* Estilos específicos para o idioma inglês */
@@ -1956,7 +1959,6 @@ ul {
     font-weight: 500;
     color: #5BC478;
     animation: neon-glow 1s ease-in-out infinite alternate;
-    margin-left: 150px;
   }
 
   .contato {
@@ -1999,19 +2001,6 @@ ul {
   
 }
 
-.titulo {
-  color: white;
-  position: absolute;
-  font-family: Roboto, Arial;
-  font-weight: 400;
-  font-size: 38px;
-  margin-bottom: 150px;
-  left: 50%;
-  top: 3018px;
-  transform: translateX(-50%);
-  text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
-  z-index: 100000000000;
-}
 
   /* Adicione a animação de deslizamento da direita para a esquerda */
   @keyframes slideInRight {
