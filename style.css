@@ -1556,6 +1556,7 @@ ul {
     transform: translateX(-50%);
     /* Centraliza horizontalmente */
     text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
+    z-index: 100000000000;
   }
 
   .formulario label {
@@ -1873,6 +1874,20 @@ ul {
     z-index: 0;
   }
 
+.titulo {
+  color: white;
+  position: absolute;
+  font-family: Roboto, Arial;
+  font-weight: 400;
+  font-size: 38px;
+  margin-bottom: 150px;
+  left: 50%;
+  top: 3270px;
+  transform: translateX(-50%);
+  text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
+  z-index: 100000000000;
+}
+
   .div3::before {
     content: "";
     position: absolute;
@@ -1984,6 +1999,19 @@ ul {
   
 }
 
+.titulo {
+  color: white;
+  position: absolute;
+  font-family: Roboto, Arial;
+  font-weight: 400;
+  font-size: 38px;
+  margin-bottom: 150px;
+  left: 50%;
+  top: 3018px;
+  transform: translateX(-50%);
+  text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
+  z-index: 100000000000;
+}
 
   /* Adicione a animação de deslizamento da direita para a esquerda */
   @keyframes slideInRight {
@@ -2296,18 +2324,6 @@ ul {
     color: #4CCC75;
   }
 
-  .titulo {
-    color: white;
-    position: absolute;
-    font-family: Roboto, Arial;
-    font-weight: 400;
-    font-size: 38px;
-    margin-bottom: 150px;
-    left: 50%;
-    top: 3270px;
-    transform: translateX(-50%);
-    text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
-}
 
   }
 
