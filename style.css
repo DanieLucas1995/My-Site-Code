@@ -992,7 +992,7 @@ body::-webkit-scrollbar-track {
     font-size: 38px;
     margin-bottom: 150px;
     left: 50%;
-    top: 2960px;
+    top: 2910px;
     transform: translateX(-50%);
     text-shadow: 2px 2px 4px rgba(92, 196, 121, 0.9);
     z-index: 100000000000;
