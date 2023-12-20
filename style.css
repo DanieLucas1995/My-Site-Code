@@ -980,7 +980,7 @@ body::-webkit-scrollbar-track {
   /* Define uma ordem de empilhamento maior que o retângulo */
 }
 
-@media (min-width: 1329px) {
+@media (min-width: 1281px) {
 .titulo {
   color: white;
   position: absolute;
@@ -995,7 +995,7 @@ body::-webkit-scrollbar-track {
   z-index: 100000000000;
 }}
 
-@media (max-width: 1328px) {
+@media (max-width: 1280px) {
 
   .title,
   .hello {
