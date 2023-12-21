@@ -1,6 +1,6 @@
 @media (max-width: 499px) {
   body {
-    width: calc(99% + -12px);
+    width: calc(100% + -16px);
     height: auto;
     overflow-x: hidden;
   }
