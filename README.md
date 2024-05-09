@@ -87,3 +87,6 @@ O objetivo do Sistema de Gestão de Projetos para Desenvolvimento de Games é au
 ## 8. Contribuições
 
 Este projeto está aberto à contribuição de outros desenvolvedores. 
+
+Daniel Lucas - danielucas\_vasquesantos@live.com
+
