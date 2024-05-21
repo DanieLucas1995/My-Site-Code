@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Usuário</title>
+    <style>
+        .form-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .form-inner {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-inner div {
+            margin-bottom: 15px;
+        }
+        .form-inner label {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="userForm" class="form-inner" onsubmit="return false;">
+            <div>
+                <label><b>Nome Completo</b></label>
+                <input type="text" name="fullName" placeholder="Nome Completo">
+            </div>
+            <div>
+                <label><b>Username</b></label>
+                <input type="text" name="username" placeholder="Username">
+            </div>
+            <div>
+                <label><b>Data de Nascimento</b></label>
+                <input type="date" name="birthDate">
+            </div>
+            <div>
+                <label><b>Endereço</b></label>
+                <input type="text" name="address" placeholder="Endereço">
+            </div>
+            <div>
+                <label><b>Telefone</b></label>
+                <input type="tel" name="phone" placeholder="Telefone">
+            </div>
+            <div>
+                <label><b>Biografia</b></label>
+                <textarea name="biography" placeholder="Biografia"></textarea>
+            </div>
+            <div>
+                <label><b>Senha</b></label>
+                <input type="password" name="password" placeholder="Senha">
+            </div>
+            <div style="text-align: right;">
+                <button type="button" id="submitUserForm" class="btn" style="margin-right: 10px;">Submit</button>
+                <button type="reset" class="btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Função para obter os parâmetros da URL
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const queryParams = {};
+            for (const [key, value] of params.entries()) {
+                queryParams[key] = value;
+            }
+            return queryParams;
+        }
+
+        document.getElementById('submitUserForm').addEventListener('click', function() {
+            // Capturar dados do formulário de usuário
+            const userForm = document.getElementById('userForm');
+            const userData = new FormData(userForm);
+            const userObject = {};
+            userData.forEach((value, key) => {
+                userObject[key] = value;
+            });
+
+            // Capturar dados do jogo dos parâmetros da URL
+            const gameData = getQueryParams();
+
+            // Combinar dados do jogo e do usuário
+            const combinedData = {
+                game: gameData,
+                user: userObject
+            };
+
+            // Enviar dados para o servidor JSON
+            fetch('https://your-json-server-endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(combinedData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Redirecionar ou exibir mensagem de sucesso
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -715,3 +715,18 @@ if (screen.orientation) {
     console.error('Falha ao bloquear a orientação:', error);
   });
 }
+
+
+// 35 Formulário Json Server SUBMIT
+document.getElementById('submitGameForm').addEventListener('click', function() {
+  // Coletar os dados do formulário de jogo
+  const gameForm = document.getElementById('gameForm');
+  const gameData = new FormData(gameForm);
+  const gameParams = new URLSearchParams(gameData).toString();
+
+  // Certifique-se de que o caminho para userForm.html está correto
+  const userFormPath = './userForm.html'; // Altere isso se necessário
+
+  // Abrir uma nova guia com o formulário de usuário, passando os dados do jogo
+  window.open(userFormPath + '?' + gameParams, '_blank');
+});
