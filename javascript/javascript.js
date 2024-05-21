@@ -730,3 +730,25 @@ document.getElementById('submitGameForm').addEventListener('click', function() {
   // Abrir uma nova guia com o formulário de usuário, passando os dados do jogo
   window.open(userFormPath + '?' + gameParams, '_blank');
 });
+
+  // Função para buscar e preencher dinamicamente os usuários
+    function populateUsers() {
+        fetch('userForm.html') // Substitua 'URL_DO_SEU_JSON_SERVER/users' pela URL correta do seu servidor JSON
+            .then(response => response.json())
+            .then(data => {
+                const selectUser = document.querySelector('select[name="user"]');
+                // Limpa as opções existentes
+                selectUser.innerHTML = '';
+                // Adiciona uma opção para cada usuário
+                data.forEach(user => {
+                    const option = document.createElement('option');
+                    option.value = user.username;
+                    option.textContent = user.username;
+                    selectUser.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Erro ao buscar usuários:', error));
+    }
+
+    // Chama a função para preencher os usuários quando a página carrega
+    window.addEventListener('load', populateUsers);

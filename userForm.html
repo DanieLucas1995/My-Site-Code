@@ -122,51 +122,41 @@
     
 
     <script>
-        // Função para obter os parâmetros da URL
-        function getQueryParams() {
-            const params = new URLSearchParams(window.location.search);
-            const queryParams = {};
-            for (const [key, value] of params.entries()) {
-                queryParams[key] = value;
-            }
-            return queryParams;
-        }
+          // Objeto simulando o banco de dados
+        let database = [];
 
-        document.getElementById('submitUserForm').addEventListener('click', function() {
-            // Capturar dados do formulário de usuário
-            const userForm = document.getElementById('userForm');
-            const userData = new FormData(userForm);
-            const userObject = {};
-            userData.forEach((value, key) => {
-                userObject[key] = value;
-            });
+// Função para exibir mensagem de sucesso
+function showSuccessMessage() {
+    alert("User saved successfully in the database.");
+}
 
-            // Capturar dados do jogo dos parâmetros da URL
-            const gameData = getQueryParams();
+// Função para limpar o formulário após o envio
+function clearForm() {
+    document.getElementById("userForm").reset();
+}
 
-            // Combinar dados do jogo e do usuário
-            const combinedData = {
-                game: gameData,
-                user: userObject
-            };
+// Função para manipular o clique no botão "New Register"
+document.getElementById('submitUserForm').addEventListener('click', function() {
+    // Capturar dados do formulário de usuário
+    const userForm = document.getElementById('userForm');
+    const userData = new FormData(userForm);
+    const userObject = {};
+    userData.forEach((value, key) => {
+        userObject[key] = value;
+    });
 
-            // Enviar dados para o servidor JSON
-            fetch('https://your-json-server-endpoint', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(combinedData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Sucesso:', data);
-                // Redirecionar ou exibir mensagem de sucesso
-            })
-            .catch((error) => {
-                console.error('Erro:', error);
-            });
-        });
+    // Adicionar usuário ao banco de dados simulado
+    database.push(userObject);
+
+    // Exibir mensagem de sucesso
+    showSuccessMessage();
+
+    // Limpar o formulário
+    clearForm();
+
+    // Exibir os usuários salvos no console (somente para fins de demonstração)
+    console.log(database);
+});
     </script>
 </body>
 </html>
