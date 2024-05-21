@@ -56,8 +56,8 @@
                 <input type="password" name="password" placeholder="Senha">
             </div>
             <div style="text-align: right;">
-                <button type="button" id="submitUserForm" class="btn" style="margin-right: 10px;">Submit</button>
-                <button type="reset" class="btn">Cancel</button>
+                <button type="button" id="submitUserForm" class="btn" style="margin-right: 10px;">Enviar</button>
+                <button type="reset" class="btn">Cancelar</button>
             </div>
         </form>
     </div>
@@ -101,11 +101,11 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Success:', data);
+                console.log('Sucesso:', data);
                 // Redirecionar ou exibir mensagem de sucesso
             })
             .catch((error) => {
-                console.error('Error:', error);
+                console.error('Erro:', error);
             });
         });
     </script>

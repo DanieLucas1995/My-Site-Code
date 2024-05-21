@@ -29,7 +29,7 @@
         <form id="userForm" class="form-inner" onsubmit="return false;">
             <div>
                 <label><b>Nome Completo</b></label>
-                <input type="text" name="fullName" placeholder="Nome Completo">
+                <input type="text" name="fullName" placeholder="Full Name">
             </div>
             <div>
                 <label><b>Username</b></label>
@@ -41,22 +41,22 @@
             </div>
             <div>
                 <label><b>Endereço</b></label>
-                <input type="text" name="address" placeholder="Endereço">
+                <input type="text" name="address" placeholder="Adress">
             </div>
             <div>
                 <label><b>Telefone</b></label>
-                <input type="tel" name="phone" placeholder="Telefone">
+                <input type="tel" name="phone" placeholder="Phone Number">
             </div>
             <div>
                 <label><b>Biografia</b></label>
-                <textarea name="biography" placeholder="Biografia"></textarea>
+                <textarea name="biography" placeholder="Biography"></textarea>
             </div>
             <div>
                 <label><b>Senha</b></label>
-                <input type="password" name="password" placeholder="Senha">
+                <input type="password" name="password" placeholder="Password">
             </div>
             <div style="text-align: right;">
-                <button type="button" id="submitUserForm" class="btn" style="margin-right: 10px;">Submit</button>
+                <button type="button" id="submitUserForm" class="btn" style="margin-right: 10px;">Send</button>
                 <button type="reset" class="btn">Cancel</button>
             </div>
         </form>
@@ -101,11 +101,11 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Success:', data);
+                console.log('Sucesso:', data);
                 // Redirecionar ou exibir mensagem de sucesso
             })
             .catch((error) => {
-                console.error('Error:', error);
+                console.error('Erro:', error);
             });
         });
     </script>
