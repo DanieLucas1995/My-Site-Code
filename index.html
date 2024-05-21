@@ -347,46 +347,48 @@
             <p style="margin-left: 10px; margin-right: 10px;"><strong>Tecnologias utilizadas:</strong> HTML, CSS,
               JavaScript, Bootstrap, JSON.</p>
 
-             <form th:action="@{/addgame}" th:object="${game}" method="post" style="text-align: center;">
-    <div>
-        <label>Game Name</label>
-        <input type="text" th:field="*{name}" placeholder="Game Name">
-    </div>
-    <div>
-        <label>Genre</label>
-        <input type="text" th:field="*{genre}" placeholder="Genre">
-    </div>
-    <div>
-        <label>Release Date</label>
-        <input type="text" th:field="*{releaseDate}" placeholder="Release Date">
-    </div>
-    <div>
-        <label>Platforms</label>
-        <select th:field="*{platforms}">
-            <option value="PC">PC</option>
-            <option value="PlayStation">PlayStation</option>
-            <option value="Xbox">Xbox</option>
-            <option value="Nintendo">Nintendo</option>
-        </select>
-    </div>
-    <div>
-        <label>Priority Rate</label>
-        <select th:field="*{priorityRate}">
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-        </select>
-    </div>
-    <div>
-        <label>Game Description</label>
-        <textarea th:field="*{description}" placeholder="Game Description"></textarea>
-    </div>
-    <div>
-        <button type="submit" class="btn">Submit</button>
-        <button type="reset" class="btn">Cancel</button>
-    </div>
-</form>
-
+              <div style="text-align: center;">
+                <form th:action="@{/addgame}" th:object="${game}" method="post" style="display: inline-block; text-align: left; padding: 20px;">
+                    <div style="margin-bottom: 10px;">
+                        <label>Game Name</label>
+                        <input type="text" th:field="*{name}" placeholder="Game Name">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label>Genre</label>
+                        <input type="text" th:field="*{genre}" placeholder="Genre">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label>Release Date</label>
+                        <input type="text" th:field="*{releaseDate}" placeholder="Release Date">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label>Platforms</label>
+                        <select th:field="*{platforms}">
+                            <option value="PC">PC</option>
+                            <option value="PlayStation">PlayStation</option>
+                            <option value="Xbox">Xbox</option>
+                            <option value="Nintendo">Nintendo</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label>Priority Rate</label>
+                        <select th:field="*{priorityRate}">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label>Game Description</label>
+                        <textarea th:field="*{description}" placeholder="Game Description"></textarea>
+                    </div>
+                    <div style="text-align: right;">
+                        <button type="submit" class="btn" style="margin-right: 10px;">Submit</button>
+                        <button type="reset" class="btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+            
             </form>
             <div class="next-arrow">&#9654;</div>
             <div class="prev-arrow">&#9664;</div>
