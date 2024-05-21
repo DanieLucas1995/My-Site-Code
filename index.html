@@ -340,11 +340,54 @@
           </div>
 
           <div class="proj">
-            <h2 style="text-align: center;">Meu Portfolio em HTML, CSS e JavaScript</h2>
-            <p style="margin-left: 10px; margin-right: 10px;"><strong>Descrição:</strong> Explore meu universo profissional por meio do meu portfólio pessoal, uma janela aberta para descobrir meus projetos inovadores, habilidades versáteis e experiências enriquecedoras. 
-              Este espaço foi cuidadosamente elaborado utilizando as tecnologias de ponta HTML, CSS e JavaScript, proporcionando uma apresentação interativa, envolvente e que reflete o cuidado em apresentar todo o meu portfólio.</p>
+            <h2 style="text-align: center;">JAVA Web</h2>
+            <p style="margin-left: 10px; margin-right: 10px;"><strong>Descrição:</strong> O sistema em questão visa otimizar a gestão de informações relacionadas ao desenvolvimento de jogos, 
+              oferecendo apenas funcionalidades de cadastro inicialmente. Na tela de cadastro, os desenvolvedores podem registrar novos jogos, assegurando o preenchimento correto de campos obrigatórios, como nome, 
+              gênero, data de lançamento, prioridade e plataforma. Além disso, o sistema desenvolvido em JAVA, será disponibilizado no site de categoria “portifólio”, demonstrando habilidades em desenvolvimento web e desktop. </p>
             <p style="margin-left: 10px; margin-right: 10px;"><strong>Tecnologias utilizadas:</strong> HTML, CSS,
-              JavaScript.</p>
+              JavaScript, Bootstrap, JSON.</p>
+
+             <form th:action="@{/addgame}" th:object="${game}" method="post" style="text-align: center;">
+    <div>
+        <label>Game Name</label>
+        <input type="text" th:field="*{name}" placeholder="Game Name">
+    </div>
+    <div>
+        <label>Genre</label>
+        <input type="text" th:field="*{genre}" placeholder="Genre">
+    </div>
+    <div>
+        <label>Release Date</label>
+        <input type="text" th:field="*{releaseDate}" placeholder="Release Date">
+    </div>
+    <div>
+        <label>Platforms</label>
+        <select th:field="*{platforms}">
+            <option value="PC">PC</option>
+            <option value="PlayStation">PlayStation</option>
+            <option value="Xbox">Xbox</option>
+            <option value="Nintendo">Nintendo</option>
+        </select>
+    </div>
+    <div>
+        <label>Priority Rate</label>
+        <select th:field="*{priorityRate}">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+    </div>
+    <div>
+        <label>Game Description</label>
+        <textarea th:field="*{description}" placeholder="Game Description"></textarea>
+    </div>
+    <div>
+        <button type="submit" class="btn">Submit</button>
+        <button type="reset" class="btn">Cancel</button>
+    </div>
+</form>
+
+            </form>
             <div class="next-arrow">&#9654;</div>
             <div class="prev-arrow">&#9664;</div>
           </div>
