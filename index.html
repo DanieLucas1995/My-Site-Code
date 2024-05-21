@@ -341,28 +341,28 @@
 
           <div class="proj">
             <h2 style="text-align: center;">JAVA Web</h2>
-            <p style="margin-left: 10px; margin-right: 10px;"><strong>Descrição:</strong> O sistema em questão visa otimizar a gestão de informações relacionadas ao desenvolvimento de jogos, 
-              oferecendo apenas funcionalidades de cadastro inicialmente. Na tela de cadastro, os desenvolvedores podem registrar novos jogos, assegurando o preenchimento correto de campos obrigatórios, como nome, 
-              gênero, data de lançamento, prioridade e plataforma. Além disso, o sistema desenvolvido em JAVA, será disponibilizado no site de categoria “portifólio”, demonstrando habilidades em desenvolvimento web e desktop. </p>
+            <p style="margin-left: 10px; margin-right: 10px;"><strong>Descrição:</strong> O sistema em questão visa otimizar a gestão de informações relacionadas ao desenvolvimento de jogos, oferecendo
+               apenas funcionalidades de cadastro inicialmente. Abaixo, você pode registrar novos jogos, assegurado pelo preenchimento correto dos campos obrigatórios, como nome, gênero, data de lançamento,
+                prioridade e plataforma. Além disso, o sistema desenvolvido em Java (Netbeans) será disponibilizado no site GitHub na categoria "portfólio", demonstrando minhas habilidades em desenvolvimento web e desktop.</p>
             <p style="margin-left: 10px; margin-right: 10px;"><strong>Tecnologias utilizadas:</strong> HTML, CSS,
               JavaScript, Bootstrap, JSON.</p>
 
               <div style="text-align: center;">
                 <form th:action="@{/addgame}" th:object="${game}" method="post" style="display: inline-block; text-align: left; padding: 20px;">
-                    <div style="margin-bottom: 10px;">
-                        <label>Game Name</label>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 16px;"><b>Game Name</b></label>
                         <input type="text" th:field="*{name}" placeholder="Game Name">
                     </div>
-                    <div style="margin-bottom: 10px;">
-                        <label>Genre</label>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 16px;"><b>Genre</b></label>
                         <input type="text" th:field="*{genre}" placeholder="Genre">
                     </div>
-                    <div style="margin-bottom: 10px;">
-                        <label>Release Date</label>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 16px;"><b>Release Date</b></label>
                         <input type="text" th:field="*{releaseDate}" placeholder="Release Date">
                     </div>
-                    <div style="margin-bottom: 10px;">
-                        <label>Platforms</label>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 16px;"><b>Platforms</b></label>
                         <select th:field="*{platforms}">
                             <option value="PC">PC</option>
                             <option value="PlayStation">PlayStation</option>
@@ -370,16 +370,16 @@
                             <option value="Nintendo">Nintendo</option>
                         </select>
                     </div>
-                    <div style="margin-bottom: 10px;">
-                        <label>Priority Rate</label>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 16px;"><b>Priority Rate</b></label>
                         <select th:field="*{priorityRate}">
                             <option value="High">High</option>
                             <option value="Medium">Medium</option>
                             <option value="Low">Low</option>
                         </select>
                     </div>
-                    <div style="margin-bottom: 10px;">
-                        <label>Game Description</label>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 16px;"><b>Game Description</b></label>
                         <textarea th:field="*{description}" placeholder="Game Description"></textarea>
                     </div>
                     <div style="text-align: right;">
