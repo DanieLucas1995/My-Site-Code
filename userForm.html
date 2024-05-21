@@ -25,6 +25,53 @@
     </style>
 </head>
 <body>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Define a fonte como Arial */
+        }
+    
+        .form-container {
+            width: 100%;
+            text-align: center;
+        }
+    
+        .form-inner {
+            display: inline-block;
+            text-align: left;
+            max-width: 600px; /* Defina uma largura máxima para o formulário */
+            width: 100%; /* Faça o formulário preencher a largura disponível */
+            margin: 0 auto; /* Centralize o formulário na tela */
+        }
+    
+        .form-inner label {
+            display: block;
+            font-size: 20px; /* Tamanho da fonte aumentado para 20px */
+            margin-bottom: 10px; /* Espaçamento maior entre os rótulos */
+        }
+    
+        .form-inner input,
+        .form-inner textarea,
+        .form-inner select {
+            width: calc(100% - 20px); /* Ajusta a largura para compensar o preenchimento */
+            padding: 10px; /* Espaçamento interno aumentado para 10px */
+            margin: 10px 0; /* Espaçamento vertical entre os campos */
+            font-size: 20px; /* Tamanho da fonte aumentado para 20px */
+            box-sizing: border-box;
+        }
+    
+        .form-inner select {
+            width: calc(100% - 20px); /* Ajusta a largura para compensar o preenchimento */
+        }
+    
+        .form-inner div:last-child {
+            text-align: center; /* Alinha os botões no centro */
+        }
+    
+        .btn {
+            font-size: 20px; /* Tamanho da fonte aumentado para 20px */
+        }
+    </style>
+    
     <div class="form-container">
         <form id="userForm" class="form-inner" onsubmit="return false;">
             <div>
@@ -55,12 +102,24 @@
                 <label><b>Senha</b></label>
                 <input type="password" name="password" placeholder="Password">
             </div>
-            <div style="text-align: right;">
-                <button type="button" id="submitUserForm" class="btn" style="margin-right: 10px;">Send</button>
+            <div>
+                <label><b>Tipo de Usuário</b></label>
+                <select name="userType">
+                    <option value="admin">Administrator</option>
+                    <option value="dev">Developer</option>
+                    <option value="Quality Assurance">Tester</option>
+                    <option value="Viewer">Viewer</option>
+                    <option value="Guest">Client</option>
+                    <option value="Reporter">Bug Reporter</option>
+                </select>
+            </div>
+            <div style="text-align: center;">
+                <button type="button" id="submitUserForm" class="btn" style="margin-right: 10px;">New Register</button>
                 <button type="reset" class="btn">Cancel</button>
             </div>
         </form>
     </div>
+    
 
     <script>
         // Função para obter os parâmetros da URL
