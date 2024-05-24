@@ -718,37 +718,30 @@ if (screen.orientation) {
 
 
 // 35 Formulário Json Server SUBMIT
-document.getElementById('submitGameForm').addEventListener('click', function() {
-  // Coletar os dados do formulário de jogo
+ddocument.getElementById('gameForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita o envio padrão do formulário
+
+  // Coletar os dados do formulário
   const gameForm = document.getElementById('gameForm');
-  const gameData = new FormData(gameForm);
-  const gameParams = new URLSearchParams(gameData).toString();
+  const formData = new FormData(gameForm);
 
-  // Certifique-se de que o caminho para userForm.html está correto
-  const userFormPath = './userForm.html'; // Altere isso se necessário
-
-  // Abrir uma nova guia com o formulário de usuário, passando os dados do jogo
-  window.open(userFormPath + '?' + gameParams, '_blank');
+  // Enviar os dados para o servlet usando fetch
+  fetch('saveGame', {
+      method: 'POST',
+      body: formData
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Erro ao enviar dados do formulário.');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log('Dados enviados com sucesso:', data);
+      // Você pode redirecionar o usuário para uma página de confirmação ou fazer qualquer outra coisa aqui
+  })
+  .catch(error => {
+      console.error('Erro ao enviar dados do formulário:', error);
+      // Lidar com o erro aqui, como exibir uma mensagem de erro para o usuário
+  });
 });
-
-  // Função para buscar e preencher dinamicamente os usuários
-    function populateUsers() {
-        fetch('userForm.html') // Substitua 'URL_DO_SEU_JSON_SERVER/users' pela URL correta do seu servidor JSON
-            .then(response => response.json())
-            .then(data => {
-                const selectUser = document.querySelector('select[name="user"]');
-                // Limpa as opções existentes
-                selectUser.innerHTML = '';
-                // Adiciona uma opção para cada usuário
-                data.forEach(user => {
-                    const option = document.createElement('option');
-                    option.value = user.username;
-                    option.textContent = user.username;
-                    selectUser.appendChild(option);
-                });
-            })
-            .catch(error => console.error('Erro ao buscar usuários:', error));
-    }
-
-    // Chama a função para preencher os usuários quando a página carrega
-    window.addEventListener('load', populateUsers);
