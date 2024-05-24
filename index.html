@@ -296,22 +296,22 @@
               JavaScript, Bootstrap, JSON.</p>
 
               <div style="text-align: center;">
-                <form id="gameForm" style="display: inline-block; text-align: left; padding: 20px;" onsubmit="return false;">
+                <form id="gameForm" action="saveGame" method="post" style="display: inline-block; text-align: left; padding: 20px;">
                     <div style="margin-bottom: 15px;">
                         <label style="font-size: 16px;"><b>Nome do Jogo</b></label>
-                        <input type="text" name="name" placeholder="Nome do Jogo">
+                        <input type="text" name="name" placeholder="Nome do Jogo" required>
                     </div>
                     <div style="margin-bottom: 15px;">
                         <label style="font-size: 16px;"><b>Gênero</b></label>
-                        <input type="text" name="genre" placeholder="Gênero">
+                        <input type="text" name="genre" placeholder="Gênero" required>
                     </div>
                     <div style="margin-bottom: 15px;">
                         <label style="font-size: 16px;"><b>Data de Lançamento</b></label>
-                        <input type="text" name="releaseDate" placeholder="Data de Lançamento">
+                        <input type="date" name="releaseDate" placeholder="Data de Lançamento" required>
                     </div>
                     <div style="margin-bottom: 15px;">
                         <label style="font-size: 16px;"><b>Plataformas</b></label>
-                        <select name="platforms">
+                        <select name="platforms" required>
                             <option value="PC">PC</option>
                             <option value="PlayStation">PlayStation</option>
                             <option value="Xbox">Xbox</option>
@@ -320,29 +320,29 @@
                     </div>
                     <div style="margin-bottom: 15px;">
                         <label style="font-size: 16px;"><b>Taxa de Prioridade</b></label>
-                        <select name="priorityRate">
+                        <select name="priorityRate" required>
                             <option value="High">Alta</option>
                             <option value="Medium">Média</option>
                             <option value="Low">Baixa</option>
                         </select>
                     </div>
                     <div style="margin-bottom: 15px;">
-                      <label style="font-size: 16px;"><b>Usuário</b></label>
-                      <select name="user" id="userSelect" onchange="checkSelectedUser()">
-                          <option value="New Register">Novo Usuário</option>
-                          <!-- opções de usuário preenchidas dinamicamente -->
+                        <label style="font-size: 16px;"><b>Usuário</b></label>
+                        <select name="user" id="userSelect" required>
+                            <option value="New Register">Novo Usuário</option>
                         </select>
                     </div>
                     <div style="margin-bottom: 15px;">
                         <label style="font-size: 16px;"><b>Descrição do Jogo</b></label>
-                        <textarea name="description" placeholder="Descrição do Jogo"></textarea>
+                        <textarea name="description" placeholder="Descrição do Jogo" required></textarea>
                     </div>
                     <div style="text-align: right;">
-                        <button type="button" id="submitGameForm" class="btn" style="margin-right: 10px;">Enviar</button>
+                        <button type="submit" class="btn" style="margin-right: 10px;">Enviar</button>
                         <button type="reset" class="btn">Cancelar</button>
                     </div>
                 </form>
             </div>
+            
             
             
             

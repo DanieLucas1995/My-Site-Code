@@ -73,53 +73,73 @@
     </style>
     
     <div class="form-container">
-        <form id="userForm" class="form-inner" onsubmit="return false;">
+        <form id="userForm" class="form-inner" action="userRegistration" method="post">
             <div>
-                <label><b>Nome Completo</b></label>
-                <input type="text" name="fullName" placeholder="Full Name">
+                <label><b>Nome</b></label>
+                <input type="text" name="name" placeholder="Name">
             </div>
             <div>
-                <label><b>Username</b></label>
-                <input type="text" name="username" placeholder="Username">
+                <label><b>Nome de Usuário</b></label>
+                <input type="text" name="user_Name" placeholder="Username">
             </div>
             <div>
-                <label><b>Data de Nascimento</b></label>
-                <input type="date" name="birthDate">
+                <label><b>Gênero</b></label>
+                <input type="text" name="gender" placeholder="Gender">
             </div>
             <div>
-                <label><b>Endereço</b></label>
-                <input type="text" name="address" placeholder="Adress">
+                <label><b>Idade</b></label>
+                <input type="number" name="age" placeholder="Age">
             </div>
             <div>
-                <label><b>Telefone</b></label>
-                <input type="tel" name="phone" placeholder="Phone Number">
-            </div>
-            <div>
-                <label><b>Biografia</b></label>
-                <textarea name="biography" placeholder="Biography"></textarea>
+                <label><b>Email</b></label>
+                <input type="email" name="email" placeholder="Email">
             </div>
             <div>
                 <label><b>Senha</b></label>
                 <input type="password" name="password" placeholder="Password">
             </div>
             <div>
+                <label><b>Telefone</b></label>
+                <input type="tel" name="phone_Number" placeholder="Phone Number">
+            </div>
+            <div>
+                <label><b>Cidade</b></label>
+                <input type="text" name="city" placeholder="City">
+            </div>
+            <div>
+                <label><b>Nacionalidade</b></label>
+                <input type="text" name="nationality" placeholder="Nationality">
+            </div>
+            <div>
+                <label><b>Data de Ingresso</b></label>
+                <input type="date" name="date_Joined">
+            </div>
+            <div>
+                <label><b>Biografia</b></label>
+                <textarea name="bio" placeholder="Biography"></textarea>
+            </div>
+            <div>
                 <label><b>Tipo de Usuário</b></label>
-                <select name="userType">
-                    <option value="admin">Administrator</option>
-                    <option value="dev">Developer</option>
-                    <option value="Quality Assurance">Tester</option>
+                <select name="accessType">
+                    <option value="Administrator">Administrator</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Quality Assurance">Tester/QA (Quality Assurance)</option>
                     <option value="Viewer">Viewer</option>
-                    <option value="Guest">Client</option>
-                    <option value="Reporter">Bug Reporter</option>
+                    <option value="Guest">Guest/Client</option>
+                    <option value="Bug Reporter">Bug Reporter</option>
                 </select>
             </div>
+            <div>
+                <label><b>ID da Empresa (opcional)</b></label>
+                <input type="number" name="company_idCompany" placeholder="Company ID">
+            </div>
             <div style="text-align: center;">
-                <button type="button" id="submitUserForm" class="btn" style="margin-right: 10px;">New Register</button>
+                <button type="submit" class="btn" style="margin-right: 10px;">New Register</button>
                 <button type="reset" class="btn">Cancel</button>
             </div>
         </form>
+        
     </div>
-    
 
     <script>
           // Objeto simulando o banco de dados
