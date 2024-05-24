@@ -732,7 +732,7 @@ function submitFormData(formData) {
           throw new Error('Erro ao enviar dados do formulário.');
       }
       // Redirecionar para a página dataForm.html após o envio bem-sucedido
-      window.location.href = 'dataForm.html';
+      window.location.href = 'http://localhost:3000/games';
   })
   .catch(error => {
       console.error('Erro ao enviar dados do formulário:', error);
