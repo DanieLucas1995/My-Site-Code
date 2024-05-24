@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
             text-align: center;
             margin-top: 50px;
         }
+
         .form-inner {
             display: inline-block;
             text-align: left;
@@ -16,111 +18,125 @@
             border: 1px solid #ccc;
             border-radius: 10px;
         }
+
         .form-inner div {
             margin-bottom: 15px;
         }
+
         .form-inner label {
             font-size: 16px;
         }
-    </style>
-</head>
-<body>
-    <style>
+
         body {
-            font-family: Arial, sans-serif; /* Define a fonte como Arial */
+            font-family: Arial, sans-serif;
+            /* Define a fonte como Arial */
         }
-    
+
         .form-container {
             width: 100%;
             text-align: center;
         }
-    
+
         .form-inner {
             display: inline-block;
             text-align: left;
-            max-width: 600px; /* Defina uma largura máxima para o formulário */
-            width: 100%; /* Faça o formulário preencher a largura disponível */
-            margin: 0 auto; /* Centralize o formulário na tela */
+            max-width: 600px;
+            /* Defina uma largura máxima para o formulário */
+            width: 100%;
+            /* Faça o formulário preencher a largura disponível */
+            margin: 0 auto;
+            /* Centralize o formulário na tela */
         }
-    
+
         .form-inner label {
             display: block;
-            font-size: 20px; /* Tamanho da fonte aumentado para 20px */
-            margin-bottom: 10px; /* Espaçamento maior entre os rótulos */
+            font-size: 20px;
+            /* Tamanho da fonte aumentado para 20px */
+            margin-bottom: 10px;
+            /* Espaçamento maior entre os rótulos */
         }
-    
+
         .form-inner input,
         .form-inner textarea,
         .form-inner select {
-            width: calc(100% - 20px); /* Ajusta a largura para compensar o preenchimento */
-            padding: 10px; /* Espaçamento interno aumentado para 10px */
-            margin: 10px 0; /* Espaçamento vertical entre os campos */
-            font-size: 20px; /* Tamanho da fonte aumentado para 20px */
+            width: calc(100% - 20px);
+            /* Ajusta a largura para compensar o preenchimento */
+            padding: 10px;
+            /* Espaçamento interno aumentado para 10px */
+            margin: 10px 0;
+            /* Espaçamento vertical entre os campos */
+            font-size: 20px;
+            /* Tamanho da fonte aumentado para 20px */
             box-sizing: border-box;
         }
-    
+
         .form-inner select {
-            width: calc(100% - 20px); /* Ajusta a largura para compensar o preenchimento */
+            width: calc(100% - 20px);
+            /* Ajusta a largura para compensar o preenchimento */
         }
-    
+
         .form-inner div:last-child {
-            text-align: center; /* Alinha os botões no centro */
+            text-align: center;
+            /* Alinha os botões no centro */
         }
-    
+
         .btn {
-            font-size: 20px; /* Tamanho da fonte aumentado para 20px */
+            font-size: 20px;
+            /* Tamanho da fonte aumentado para 20px */
         }
     </style>
-    
+</head>
+
+<body>
     <div class="form-container">
         <form id="userForm" class="form-inner" action="UserRegistrationServlet" method="post">
             <div>
                 <label><b>Nome</b></label>
-                <input type="text" name="Name" placeholder="Name">
+                <input type="text" name="Name" placeholder="Name" required>
             </div>
             <div>
                 <label><b>Nome de Usuário</b></label>
-                <input type="text" name="user_Name" placeholder="Username">
+                <input type="text" name="user_Name" placeholder="Username" required>
             </div>
             <div>
                 <label><b>Gênero</b></label>
-                <input type="text" name="Gender" placeholder="Gender">
+                <input type="text" name="Gender" placeholder="Gender" required>
             </div>
             <div>
                 <label><b>Idade</b></label>
-                <input type="number" name="Age" placeholder="Age">
+                <input type="number" name="Age" placeholder="Age" required>
             </div>
             <div>
                 <label><b>Email</b></label>
-                <input type="email" name="Email" placeholder="Email">
+                <input type="email" name="Email" placeholder="Email" required>
             </div>
             <div>
                 <label><b>Senha</b></label>
-                <input type="password" name="Password" placeholder="Password">
+                <input type="password" name="Password" placeholder="Password" required>
             </div>
             <div>
                 <label><b>Telefone</b></label>
-                <input type="tel" name="Phone_Number" placeholder="Phone Number">
+                <input type="tel" name="Phone_Number" placeholder="Phone Number" required>
             </div>
             <div>
                 <label><b>Cidade</b></label>
-                <input type="text" name="City" placeholder="City">
+                <input type="text" name="City" placeholder="City" required>
             </div>
             <div>
                 <label><b>Nacionalidade</b></label>
-                <input type="text" name="Nationality" placeholder="Nationality">
+                <input type="text" name="Nationality" placeholder="Nationality" required>
             </div>
             <div>
                 <label><b>Data de Ingresso</b></label>
-                <input type="date" name="Date_Joined">
+                <input type="date" name="Date_Joined" required>
             </div>
             <div>
                 <label><b>Biografia</b></label>
-                <textarea name="Bio" placeholder="Biography"></textarea>
+                <textarea name="Bio" placeholder="Biography" required></textarea>
             </div>
             <div>
                 <label><b>Tipo de Usuário</b></label>
-                <select name="Access_Type">
+                <select name="Access_Type" required>
                     <option value="Administrator">Administrator</option>
                     <option value="Developer">Developer</option>
                     <option value="Quality Assurance">Tester/QA (Quality Assurance)</option>
@@ -141,43 +157,41 @@
     </div>
 
     <script>
-         // Objeto simulando o banco de dados
-    let database = [];
+        // Função para enviar dados do formulário para o servidor JSON
+        function submitFormData(formData) {
+            fetch('http://localhost:3000/users', {
+                method: 'POST',
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao enviar dados do formulário.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Dados enviados com sucesso:', data);
+                alert('Usuário salvo com sucesso!');
+                // Redirecionar para a página que lista os usuários
+                window.location.href = 'http://localhost:3000/users';
+            })
+            .catch(error => {
+                console.error('Erro ao enviar dados do formulário:', error);
+                alert('Erro ao enviar dados do formulário. Por favor, tente novamente mais tarde.');
+            });
+        }
 
-// Função para exibir mensagem de sucesso
-function showSuccessMessage() {
-    alert("User saved successfully in the database.");
-}
+        // Evento de envio do formulário
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
 
-// Função para limpar o formulário após o envio
-function clearForm() {
-    document.getElementById("userForm").reset();
-}
-
-// Função para manipular o envio do formulário
-document.getElementById('userForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita o envio padrão do formulário
-
-    // Capturar dados do formulário de usuário
-    const userForm = document.getElementById('userForm');
-    const userData = new FormData(userForm);
-    const userObject = {};
-    userData.forEach((value, key) => {
-        userObject[key] = value;
-    });
-
-    // Adicionar usuário ao banco de dados simulado
-    database.push(userObject);
-
-    // Exibir mensagem de sucesso
-    showSuccessMessage();
-
-    // Limpar o formulário
-    clearForm();
-
-    // Exibir os usuários salvos no console (somente para fins de demonstração)
-    console.log(database);
-});
+            const formData = new FormData(this); // Coleta os dados do formulário
+            submitFormData(formData); // Chama a função para enviar os dados do formulário
+        });
     </script>
 </body>
+
 </html>
