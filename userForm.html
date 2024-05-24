@@ -142,8 +142,8 @@
     </div>
 
     <script>
-          // Objeto simulando o banco de dados
-        let database = [];
+         // Objeto simulando o banco de dados
+    let database = [];
 
 // Função para exibir mensagem de sucesso
 function showSuccessMessage() {
@@ -155,8 +155,10 @@ function clearForm() {
     document.getElementById("userForm").reset();
 }
 
-// Função para manipular o clique no botão "New Register"
-document.getElementById('submitUserForm').addEventListener('click', function() {
+// Função para manipular o envio do formulário
+document.getElementById('userForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
+
     // Capturar dados do formulário de usuário
     const userForm = document.getElementById('userForm');
     const userData = new FormData(userForm);
