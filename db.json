@@ -1,0 +1,24 @@
+{
+  "games": [
+    {
+      "id": "1",
+      "name": "Exemplo de Jogo 1",
+      "genre": "Aventura"
+    },
+    {
+      "id": "2",
+      "name": "Exemplo de Jogo 2",
+      "genre": "Estratégia"
+    },
+    {
+      "id": "0936",
+      "name": "Red Dead",
+      "genre": "Action",
+      "releaseDate": "2018-10-18",
+      "platforms": "PC",
+      "priorityRate": "Low",
+      "user": "New Register",
+      "description": "AAAAA"
+    }
+  ]
+}

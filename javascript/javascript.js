@@ -718,30 +718,33 @@ if (screen.orientation) {
 
 
 // 35 Formulário Json Server SUBMIT
-ddocument.getElementById('gameForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Evita o envio padrão do formulário
-
-  // Coletar os dados do formulário
-  const gameForm = document.getElementById('gameForm');
-  const formData = new FormData(gameForm);
-
-  // Enviar os dados para o servlet usando fetch
-  fetch('saveGame', {
+// Função para enviar dados do formulário para o servidor JSON
+function submitFormData(formData) {
+  fetch('http://localhost:3000/games', {
       method: 'POST',
-      body: formData
+      body: JSON.stringify(Object.fromEntries(formData)),
+      headers: {
+          'Content-Type': 'application/json'
+      }
   })
   .then(response => {
       if (!response.ok) {
           throw new Error('Erro ao enviar dados do formulário.');
       }
-      return response.json();
-  })
-  .then(data => {
-      console.log('Dados enviados com sucesso:', data);
-      // Você pode redirecionar o usuário para uma página de confirmação ou fazer qualquer outra coisa aqui
+      // Redirecionar para a página dataForm.html após o envio bem-sucedido
+      window.location.href = 'dataForm.html';
   })
   .catch(error => {
       console.error('Erro ao enviar dados do formulário:', error);
       // Lidar com o erro aqui, como exibir uma mensagem de erro para o usuário
+      alert('Erro ao enviar dados do formulário. Por favor, tente novamente mais tarde.');
   });
+}
+
+// Evento de envio do formulário
+document.getElementById('gameForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita o envio padrão do formulário
+
+  const formData = new FormData(this); // Coleta os dados do formulário
+  submitFormData(formData); // Chama a função para enviar os dados do formulário
 });
