@@ -4,32 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Usuário</title>
+    <title>User Form</title>
     <style>
-        .form-container {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .form-inner {
-            display: inline-block;
-            text-align: left;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-        }
-
-        .form-inner div {
-            margin-bottom: 15px;
-        }
-
-        .form-inner label {
-            font-size: 16px;
-        }
-
+        /* CSS Styles Updated */
         body {
-            font-family: Arial, sans-serif;
-            /* Define a fonte como Arial */
+            font-family: Arial, sans-serif; /* Definindo a fonte como Arial */
         }
 
         .form-container {
@@ -41,69 +20,58 @@
             display: inline-block;
             text-align: left;
             max-width: 600px;
-            /* Defina uma largura máxima para o formulário */
             width: 100%;
-            /* Faça o formulário preencher a largura disponível */
             margin: 0 auto;
-            /* Centralize o formulário na tela */
         }
 
         .form-inner label {
             display: block;
             font-size: 20px;
-            /* Tamanho da fonte aumentado para 20px */
             margin-bottom: 10px;
-            /* Espaçamento maior entre os rótulos */
         }
 
         .form-inner input,
         .form-inner textarea,
         .form-inner select {
             width: calc(100% - 20px);
-            /* Ajusta a largura para compensar o preenchimento */
             padding: 10px;
-            /* Espaçamento interno aumentado para 10px */
             margin: 10px 0;
-            /* Espaçamento vertical entre os campos */
             font-size: 20px;
-            /* Tamanho da fonte aumentado para 20px */
             box-sizing: border-box;
         }
 
         .form-inner select {
             width: calc(100% - 20px);
-            /* Ajusta a largura para compensar o preenchimento */
         }
 
         .form-inner div:last-child {
             text-align: center;
-            /* Alinha os botões no centro */
         }
 
         .btn {
             font-size: 20px;
-            /* Tamanho da fonte aumentado para 20px */
         }
     </style>
 </head>
 
 <body>
     <div class="form-container">
-        <form id="userForm" class="form-inner" action="/register" method="post">
+        <form id="userForm" class="form-inner" action="http://localhost:8080/register" method="post">
+            <!-- Changed the action to port 8080 -->
             <div>
-                <label><b>Nome</b></label>
+                <label><b>Name</b></label>
                 <input type="text" name="Name" placeholder="Name" required>
             </div>
             <div>
-                <label><b>Nome de Usuário</b></label>
+                <label><b>Username</b></label>
                 <input type="text" name="user_Name" placeholder="Username" required>
             </div>
             <div>
-                <label><b>Gênero</b></label>
+                <label><b>Gender</b></label>
                 <input type="text" name="Gender" placeholder="Gender" required>
             </div>
             <div>
-                <label><b>Idade</b></label>
+                <label><b>Age</b></label>
                 <input type="number" name="Age" placeholder="Age" required>
             </div>
             <div>
@@ -111,31 +79,31 @@
                 <input type="email" name="Email" placeholder="Email" required>
             </div>
             <div>
-                <label><b>Senha</b></label>
+                <label><b>Password</b></label>
                 <input type="password" name="Password" placeholder="Password" required>
             </div>
             <div>
-                <label><b>Telefone</b></label>
+                <label><b>Phone Number</b></label>
                 <input type="tel" name="Phone_Number" placeholder="Phone Number" required>
             </div>
             <div>
-                <label><b>Cidade</b></label>
+                <label><b>City</b></label>
                 <input type="text" name="City" placeholder="City" required>
             </div>
             <div>
-                <label><b>Nacionalidade</b></label>
+                <label><b>Nationality</b></label>
                 <input type="text" name="Nationality" placeholder="Nationality" required>
             </div>
             <div>
-                <label><b>Data de Ingresso</b></label>
+                <label><b>Date Joined</b></label>
                 <input type="date" name="Date_Joined" required>
             </div>
             <div>
-                <label><b>Biografia</b></label>
+                <label><b>Biography</b></label>
                 <textarea name="Bio" placeholder="Biography" required></textarea>
             </div>
             <div>
-                <label><b>Tipo de Usuário</b></label>
+                <label><b>Access Type</b></label>
                 <select name="Access_Type" required>
                     <option value="Administrator">Administrator</option>
                     <option value="Developer">Developer</option>
@@ -146,7 +114,7 @@
                 </select>
             </div>
             <div>
-                <label><b>ID da Empresa (opcional)</b></label>
+                <label><b>Company ID (optional)</b></label>
                 <input type="number" name="Company_idCompany" placeholder="Company ID">
             </div>
             <div style="text-align: center;">
@@ -157,9 +125,9 @@
     </div>
 
     <script>
-        // Função para enviar dados do formulário para o servidor JSON
+        // Function to submit form data to JSON server
         function submitFormData(formData) {
-            fetch('http://localhost:3000/users', {
+            fetch('http://localhost:8080/users', {
                 method: 'POST',
                 body: JSON.stringify(Object.fromEntries(formData)),
                 headers: {
@@ -168,28 +136,27 @@
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Erro ao enviar dados do formulário.');
+                    throw new Error('Error sending form data.');
                 }
                 return response.json();
             })
             .then(data => {
-                console.log('Dados enviados com sucesso:', data);
-                alert('Usuário salvo com sucesso!');
-                // Redirecionar para a página que lista os usuários
-                window.location.href = 'http://localhost:3000/users';
+                console.log('Data sent successfully:', data);
+                alert('User saved successfully!');
+                window.location.href = 'http://localhost:8080/users';
             })
             .catch(error => {
-                console.error('Erro ao enviar dados do formulário:', error);
-                alert('Erro ao enviar dados do formulário. Por favor, tente novamente mais tarde.');
+                console.error('Error sending form data:', error);
+                alert('Error sending form data. Please try again later.');
             });
         }
 
-        // Evento de envio do formulário
+        // Form submission event
         document.getElementById('userForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita o envio padrão do formulário
+            event.preventDefault(); // Prevent default form submission
 
-            const formData = new FormData(this); // Coleta os dados do formulário
-            submitFormData(formData); // Chama a função para enviar os dados do formulário
+            const formData = new FormData(this); // Collect form data
+            submitFormData(formData); // Call function to send form data
         });
     </script>
 </body>
